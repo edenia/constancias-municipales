@@ -1,13 +1,20 @@
 import * as yup from 'yup'
 
 const defaultValues = {
-  propertyNumber: '',
-  email: ''
+  idType: '',
+  idNumber: '',
+  email: '',
+  retypeEmailAddress: ''
 }
 
 const schema = yup.object().shape({
-  propertyNumber: yup.string().required('requiredField'),
-  email: yup.string().email('invalidEmail').required('requiredField')
+  idType: yup.string().required('requiredField'),
+  idNumber: yup.string().required('requiredField'),
+  email: yup.string().email('invalidEmail').required('requiredField'),
+  retypeEmailAddress: yup
+    .string()
+    .email('invalidEmail')
+    .required('requiredField')
 })
 
 export default {
