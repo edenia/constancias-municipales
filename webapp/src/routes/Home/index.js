@@ -1,6 +1,7 @@
-import React, { memo, useState } from 'react'
-import { Formik, Form, Field } from 'formik'
+import React, { memo, useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { Formik, Form, Field } from 'formik'
+import { useMutation } from '@apollo/client'
 import InputMask from 'react-input-mask'
 import {
   Box,
@@ -13,6 +14,7 @@ import {
 import { useSharedState } from '../../context/state.context'
 import { BaseTextField, BaseButton } from '../../components'
 import { requestProofSchema } from '../../schemas'
+import { MUTATION_GENERATE_CONSTANCY } from '../../gql'
 
 const { defaultValues, schema } = requestProofSchema
 const idOptions = [
@@ -26,6 +28,9 @@ const Home = () => {
   const [showProgressBar, setShowProgressBar] = useState(false)
   const [, { showMessage }] = useSharedState()
   const { t } = useTranslation('homeRoute')
+  const [generateConstancy, { error: errorGenerateConstancy }] = useMutation(
+    MUTATION_GENERATE_CONSTANCY
+  )
 
   const getMaskType = type => {
     switch (type) {
@@ -53,6 +58,14 @@ const Home = () => {
     return ''
   }
 
+  useEffect(async () => {
+    if (!errorGenerateConstancy) return
+    showMessage({
+      type: 'error',
+      content: t('InvalidDataMessage')
+    })
+  }, [errorGenerateConstancy])
+
   return (
     <Grid container>
       <Grid item md={12}>
@@ -75,28 +88,31 @@ const Home = () => {
           enableReinitialize
           initialValues={defaultValues}
           validationSchema={schema}
-          onSubmit={async (
-            { idType, idNumber, retypeEmailAddress, email },
-            formikHelpers
-          ) => {
+          onSubmit={async ({ idNumber, email }, formikHelpers) => {
             try {
               setShowProgressBar(true)
-              console.log({ idNumber })
-              if (idNumber === '7-0257-0144') {
+              const isValidData = await generateConstancy({
+                variables: {
+                  idNumber,
+                  email
+                }
+              })
+
+              if (isValidData?.data?.generate_constancy?.success) {
                 showMessage({
                   type: 'success',
                   content: t('requestBeenSentSuccessfully')
                 })
+                formikHelpers.resetForm()
+                // await new Promise(resolve => setTimeout(resolve, 2000))
+                // window.location.href = 'http://localhost:3000/thanks'
               } else {
                 showMessage({
-                  type: 'success',
+                  type: 'error',
                   content: t('InvalidDataMessage')
                 })
               }
               setShowProgressBar(false)
-              formikHelpers.resetForm()
-              await new Promise(resolve => setTimeout(resolve, 2000))
-              window.location.href = 'http://localhost:3000/thanks'
             } catch (error) {
               console.error(error)
             }

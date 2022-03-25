@@ -1,0 +1,11 @@
+type Mutation {
+  generate_constancy(
+    idNumber: String!
+    email: String!
+  ): generate_constancy_output
+}
+
+type generate_constancy_output {
+  success: Boolean!
+}
+
