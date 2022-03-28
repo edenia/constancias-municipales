@@ -62,7 +62,7 @@ const Home = () => {
     if (!errorGenerateConstancy) return
     showMessage({
       type: 'error',
-      content: t('InvalidDataMessage')
+      content: t('errorOccurredTryAgain')
     })
   }, [errorGenerateConstancy])
 
@@ -98,7 +98,7 @@ const Home = () => {
                 }
               })
 
-              if (isValidData?.data?.generate_constancy?.success) {
+              if (isValidData?.data?.generate_constancy?.success === 1) {
                 showMessage({
                   type: 'success',
                   content: t('requestBeenSentSuccessfully')
@@ -106,6 +106,11 @@ const Home = () => {
                 formikHelpers.resetForm()
                 // await new Promise(resolve => setTimeout(resolve, 2000))
                 // window.location.href = 'http://localhost:3000/thanks'
+              } else if (isValidData?.data?.generate_constancy?.success === 0) {
+                showMessage({
+                  type: 'error',
+                  content: t('haveExceededDailyRequestLimit')
+                })
               } else {
                 showMessage({
                   type: 'error',

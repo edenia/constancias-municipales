@@ -40,6 +40,7 @@ services:
       HAPI_NETWORK_WALLET_URL: '${HAPI_NETWORK_WALLET_URL}'
       HAPI_HASURA_URL: '${HAPI_HASURA_URL}'
       HAPI_HASURA_ADMIN_SECRET: '${HAPI_HASURA_ADMIN_SECRET}'
+      HAPI_CERTIFICATE_LIMIT: '${HAPI_CERTIFICATE_LIMIT}'
   hasura:
     container_name: 'boilerplate-hasura'
     image: hasura/graphql-engine:v2.0.4.cli-migrations-v3

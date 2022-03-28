@@ -41,6 +41,7 @@
     "invalidEmail": "Correo invalido",
     "emailDoesNotMatch": "El email no coincide",
     "requestBeenSentSuccessfully": "Su solicitud ha sido enviada con éxito.",
+    "errorOccurredTryAgain": "Ocurrió un error intentolo nuevamente",
     "InvalidDataMessage": "Datos inválidos. Por favor revise nuevamente. Si el problema persiste, comuníquese con la Municipalidad.",
     "haveExceededDailyRequestLimit": "Ha superado el límite de solicitudes diario del mismo documento. Espere 24 horas e intente de nuevo.",
     "submit": "Solicitar",

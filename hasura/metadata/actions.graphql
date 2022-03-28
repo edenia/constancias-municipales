@@ -6,6 +6,6 @@ type Mutation {
 }
 
 type generate_constancy_output {
-  success: Boolean!
+  success: Int!
 }
 
