@@ -1,67 +1,98 @@
 /* eslint-disable camelcase */
+const {
+  RecaptchaEnterpriseServiceClient
+} = require('@google-cloud/recaptcha-enterprise')
 const Joi = require('joi')
 const Boom = require('@hapi/boom')
 
 const { certificates } = require('../services')
-const { generalConfig } = require('../config')
+const { generalConfig, reCaptchaConfig } = require('../config')
 const { mailUtil } = require('../utils')
 const { mailTemplate } = require('../utils/templates')
 const { date } = require('joi')
+
+const reCaptchaClient = new RecaptchaEnterpriseServiceClient()
 
 module.exports = {
   method: 'POST',
   path: '/generate-constancy',
   handler: async ({ payload: { input } }) => {
     try {
-      // Call Yaipan API
+      // CALL Yaipan API
       // if (input.idNumber !== '7-0257-0144') {
       //   return { success: -1 }
       // }
-      console.log('TEST')
-      const data = await certificates.getOne({
-        id: { _eq: input.idNumber }
-      })
-      console.log({ TEST2: new Date(data.updated_at).toDateString() })
-      console.log({ TEST3: new Date().toDateString() })
-      if (!data) {
-        const result = await certificates.insert({ id: input.idNumber })
-        console.log({ result })
-        return { success: 1 }
-      }
-      console.log({ generalConfig })
-      if (
-        new Date(data.updated_at).toDateString() !== new Date().toDateString()
-      ) {
-        await certificates.update({
-          where: {
-            id: { _eq: input.idNumber }
-          },
-          _set: {
-            emitted_quantity: 1
+      console.log({
+        reCaptchaToken: input.reCaptchaToken,
+        reCaptchaConfig,
+        reCaptchaClient,
+        TEST: reCaptchaClient.projectPath(reCaptchaConfig.projectId),
+        assessment: {
+          event: {
+            token: input.reCaptchaToken,
+            siteKey: reCaptchaConfig.key
           }
-        })
-      } else {
-        if (data.emitted_quantity >= generalConfig.certificateLimit)
-          return { success: 0 }
-        else {
-          await certificates.update({
-            where: {
-              id: { _eq: input.idNumber }
-            },
-            _set: {
-              emitted_quantity: data.emitted_quantity + 1
-            }
-          })
         }
+      })
+
+      const [assessment] = await reCaptchaClient.createAssessment({
+        parent: reCaptchaClient.projectPath(reCaptchaConfig.projectId),
+        assessment: {
+          event: {
+            token: input.reCaptchaToken,
+            siteKey: reCaptchaConfig.key
+          }
+        }
+      })
+      console.log({ assessment })
+      if (assessment.tokenProperties.valid !== true) {
+        return { success: 1 } // res.status(401).json({ message: 'Invalid re captcha token' })
       }
 
-      return { success: 1 }
+      // const data = await certificates.getOne({
+      //   id: { _eq: input.idNumber }
+      // })
+
+      // if (!data) {
+      //   const result = await certificates.insert({ id: input.idNumber })
+      //   return { success: 1 }
+      // }
+
+      // if (
+      //   new Date(data.updated_at).toDateString() !== new Date().toDateString()
+      // ) {
+      //   await certificates.update({
+      //     where: {
+      //       id: { _eq: input.idNumber }
+      //     },
+      //     _set: {
+      //       emitted_quantity: 1
+      //     }
+      //   })
+      // } else {
+      //   if (data.emitted_quantity >= generalConfig.certificateLimit)
+      //     return { success: 0 }
+      //   else {
+      //     await certificates.update({
+      //       where: {
+      //         id: { _eq: input.idNumber }
+      //       },
+      //       _set: {
+      //         emitted_quantity: data.emitted_quantity + 1
+      //       }
+      //     })
+      //   }
+      // }
+
+      // SEND EMAIL
       // mailUtil.send({
       //   to: input.email,
       //   subject:
-      //     'Further action is required to activate your Proton Affiliate account',
+      //     'Certificado Municipal de propiedades',
       //   template: mailTemplate.generateConfirmation
       // })
+
+      return { success: 1 }
     } catch (error) {
       throw Boom.badRequest(error.message, { code: 'BAD_REQUEST' })
     }
@@ -70,6 +101,7 @@ module.exports = {
     validate: {
       payload: Joi.object({
         input: Joi.object({
+          reCaptchaToken: Joi.string().required(),
           idNumber: Joi.string().required(),
           email: Joi.string().required()
         }).required()

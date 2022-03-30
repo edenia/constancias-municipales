@@ -1,17 +1,19 @@
 import React, { Suspense, useMemo } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import AdapterDateFns from '@mui/lab/AdapterDateFns'
-import LocalizationProvider from '@mui/lab/LocalizationProvider'
-import { StylesProvider, createGenerateClassName } from '@mui/styles'
-import { ThemeProvider } from '@mui/material/styles'
 import CssBaseline from '@mui/material/CssBaseline'
+import AdapterDateFns from '@mui/lab/AdapterDateFns'
+import { ThemeProvider } from '@mui/material/styles'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import LocalizationProvider from '@mui/lab/LocalizationProvider'
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3'
+import { StylesProvider, createGenerateClassName } from '@mui/styles'
 
+import './i18n'
 import routes from './routes'
+import getTheme from './theme'
+import { reCaptchaConfig } from './config'
 import Loader from './components/Loader'
 import DashboardLayout from './layouts/Dashboard'
 import { useSharedState } from './context/state.context'
-import getTheme from './theme'
-import './i18n'
 
 const generateClassName = createGenerateClassName({
   productionPrefix: 'fullStack' // Change it for prefix project name.
@@ -43,11 +45,16 @@ const App = () => {
         <ThemeProvider theme={theme}>
           <CssBaseline />
           <LocalizationProvider dateAdapter={AdapterDateFns}>
-            <DashboardLayout routes={userRoutes.sidebar}>
-              <Suspense fallback={<Loader />}>
-                <Routes>{userRoutes.browser.map(renderRoute)}</Routes>
-              </Suspense>
-            </DashboardLayout>
+            <GoogleReCaptchaProvider
+              reCaptchaKey={reCaptchaConfig.config.key}
+              useEnterprise={true}
+            >
+              <DashboardLayout routes={userRoutes.sidebar}>
+                <Suspense fallback={<Loader />}>
+                  <Routes>{userRoutes.browser.map(renderRoute)}</Routes>
+                </Suspense>
+              </DashboardLayout>
+            </GoogleReCaptchaProvider>
           </LocalizationProvider>
         </ThemeProvider>
       </StylesProvider>

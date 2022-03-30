@@ -2,6 +2,7 @@ type Mutation {
   generate_constancy(
     idNumber: String!
     email: String!
+    reCaptchaToken: String!
   ): generate_constancy_output
 }
 

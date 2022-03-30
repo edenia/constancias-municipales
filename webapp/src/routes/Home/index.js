@@ -1,4 +1,5 @@
 import React, { memo, useState, useEffect } from 'react'
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
 import { useTranslation } from 'react-i18next'
 import { Formik, Form, Field } from 'formik'
 import { useMutation } from '@apollo/client'
@@ -26,6 +27,7 @@ const idOptions = [
 
 const Home = () => {
   const [showProgressBar, setShowProgressBar] = useState(false)
+  const { executeRecaptcha } = useGoogleReCaptcha()
   const [, { showMessage }] = useSharedState()
   const { t } = useTranslation('homeRoute')
   const [generateConstancy, { error: errorGenerateConstancy }] = useMutation(
@@ -90,9 +92,15 @@ const Home = () => {
           validationSchema={schema}
           onSubmit={async ({ idNumber, email }, formikHelpers) => {
             try {
+              const reCaptchaToken = await executeRecaptcha?.('submit')
+              console.log({ reCaptchaToken })
+              if (!reCaptchaToken) {
+                return
+              }
               setShowProgressBar(true)
               const isValidData = await generateConstancy({
                 variables: {
+                  reCaptchaToken,
                   idNumber,
                   email
                 }
