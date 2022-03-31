@@ -24,8 +24,6 @@ build-docker: ./Dockerfile
 		-t $(DOCKER_REGISTRY)/$(IMAGE_NAME_WEBAPP):$(LATEST_TAG) --target run-stage \
 	  --build-arg react_app_version="$(REACT_APP_VERSION)" \
 		--build-arg react_app_name="$(REACT_APP_NAME)" \
-		--build-arg react_app_google_application_credentials="$(REACT_APP_GOOGLE_APPLICATION_CREDENTIALS)" \
-		--build-arg react_app_re_captcha_project_id="$(REACT_APP_RE_CAPTCHA_PROJECT_ID)" \
 		--build-arg react_app_public_re_captcha_key="$(REACT_APP_PUBLIC_RE_CAPTCHA_KEY)" \
 		--build-arg react_app_title="$(REACT_APP_TITLE)" \
 		--build-arg react_app_logo="$(REACT_APP_LOGO)" \

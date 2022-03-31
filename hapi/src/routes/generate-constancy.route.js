@@ -9,7 +9,6 @@ const { certificates } = require('../services')
 const { generalConfig, reCaptchaConfig } = require('../config')
 const { mailUtil } = require('../utils')
 const { mailTemplate } = require('../utils/templates')
-const { date } = require('joi')
 
 const reCaptchaClient = new RecaptchaEnterpriseServiceClient()
 
@@ -22,18 +21,6 @@ module.exports = {
       // if (input.idNumber !== '7-0257-0144') {
       //   return { success: -1 }
       // }
-      console.log({
-        reCaptchaToken: input.reCaptchaToken,
-        reCaptchaConfig,
-        reCaptchaClient,
-        TEST: reCaptchaClient.projectPath(reCaptchaConfig.projectId),
-        assessment: {
-          event: {
-            token: input.reCaptchaToken,
-            siteKey: reCaptchaConfig.key
-          }
-        }
-      })
 
       const [assessment] = await reCaptchaClient.createAssessment({
         parent: reCaptchaClient.projectPath(reCaptchaConfig.projectId),
@@ -44,53 +31,58 @@ module.exports = {
           }
         }
       })
-      console.log({ assessment })
+
       if (assessment.tokenProperties.valid !== true) {
-        return { success: 1 } // res.status(401).json({ message: 'Invalid re captcha token' })
+        return { success: -2 }
       }
 
-      // const data = await certificates.getOne({
-      //   id: { _eq: input.idNumber }
-      // })
+      const data = await certificates.getOne({
+        id: { _eq: input.idNumber }
+      })
 
-      // if (!data) {
-      //   const result = await certificates.insert({ id: input.idNumber })
-      //   return { success: 1 }
-      // }
+      if (!data) {
+        await certificates.insert({ id: input.idNumber })
+        // SEND EMAIL
+        mailUtil.send({
+          to: input.email,
+          subject: 'Certificado Municipal de propiedades',
+          template: mailTemplate.generateConfirmation
+        })
+        return { success: 1 }
+      }
 
-      // if (
-      //   new Date(data.updated_at).toDateString() !== new Date().toDateString()
-      // ) {
-      //   await certificates.update({
-      //     where: {
-      //       id: { _eq: input.idNumber }
-      //     },
-      //     _set: {
-      //       emitted_quantity: 1
-      //     }
-      //   })
-      // } else {
-      //   if (data.emitted_quantity >= generalConfig.certificateLimit)
-      //     return { success: 0 }
-      //   else {
-      //     await certificates.update({
-      //       where: {
-      //         id: { _eq: input.idNumber }
-      //       },
-      //       _set: {
-      //         emitted_quantity: data.emitted_quantity + 1
-      //       }
-      //     })
-      //   }
-      // }
+      if (
+        new Date(data.updated_at).toDateString() !== new Date().toDateString()
+      ) {
+        await certificates.update({
+          where: {
+            id: { _eq: input.idNumber }
+          },
+          _set: {
+            emitted_quantity: 1
+          }
+        })
+      } else {
+        if (data.emitted_quantity >= generalConfig.certificateLimit)
+          return { success: 0 }
+        else {
+          await certificates.update({
+            where: {
+              id: { _eq: input.idNumber }
+            },
+            _set: {
+              emitted_quantity: data.emitted_quantity + 1
+            }
+          })
+        }
+      }
 
       // SEND EMAIL
-      // mailUtil.send({
-      //   to: input.email,
-      //   subject:
-      //     'Certificado Municipal de propiedades',
-      //   template: mailTemplate.generateConfirmation
-      // })
+      mailUtil.send({
+        to: input.email,
+        subject: 'Certificado Municipal de propiedades',
+        template: mailTemplate.generateConfirmation
+      })
 
       return { success: 1 }
     } catch (error) {

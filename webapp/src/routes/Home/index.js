@@ -122,7 +122,11 @@ const Home = () => {
               } else {
                 showMessage({
                   type: 'error',
-                  content: t('InvalidDataMessage')
+                  content: t(
+                    isValidData?.data?.generate_constancy?.success === -2
+                      ? 'errorReCaptcha'
+                      : 'InvalidDataMessage'
+                  )
                 })
               }
               setShowProgressBar(false)

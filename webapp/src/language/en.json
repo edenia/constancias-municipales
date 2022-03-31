@@ -41,6 +41,7 @@
     "passportNumber": "Passport number",
     "emailDoesNotMatch": "The email does not match",
     "errorOccurredTryAgain": "An error occurred try again",
+    "errorReCaptcha": "Invalid query by ReCaptcha",
     "InvalidDataMessage": "Invalid data. Please check again. If the problem persists, contact the Municipality.",
     "requestBeenSentSuccessfully": "Your request has been sent successfully.",
     "haveExceededDailyRequestLimit": "You have exceeded the daily request limit for the same document. Wait 24 hours and try again.",

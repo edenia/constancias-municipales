@@ -5,6 +5,7 @@ const {
 
 const send = async ({ to, subject, template }) => {
   try {
+    console.log({ nodemailer })
     const transporter = nodemailer.createTransport({
       host,
       secure: false,
@@ -12,7 +13,7 @@ const send = async ({ to, subject, template }) => {
       auth: { user, pass },
       tls: { rejectUnauthorized: false }
     })
-
+    console.log({ host, port, user, pass })
     await transporter.sendMail({
       from: `Constancias Municipales <${user}>`,
       to,

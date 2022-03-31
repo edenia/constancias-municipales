@@ -46,7 +46,7 @@ const App = () => {
           <CssBaseline />
           <LocalizationProvider dateAdapter={AdapterDateFns}>
             <GoogleReCaptchaProvider
-              reCaptchaKey={reCaptchaConfig.config.key}
+              reCaptchaKey={reCaptchaConfig.key}
               useEnterprise={true}
             >
               <DashboardLayout routes={userRoutes.sidebar}>
