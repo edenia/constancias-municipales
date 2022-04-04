@@ -48,6 +48,8 @@ services:
       HAPI_MAIL_PORT: '${HAPI_MAIL_PORT}'
       HAPI_MAIL_USER: '${HAPI_MAIL_USER}'
       HAPI_MAIL_PASSWORD: '${HAPI_MAIL_PASSWORD}'
+      HAPI_URL_ORGANIZATION: '${HAPI_URL_ORGANIZATION}'
+      HAPI_ORGANIZATION_IMAGE: '${HAPI_ORGANIZATION_IMAGE}'
   hasura:
     container_name: 'boilerplate-hasura'
     image: hasura/graphql-engine:v2.0.4.cli-migrations-v3
@@ -89,6 +91,7 @@ services:
     environment:
       REACT_APP_TAG: '${REACT_APP_TAG}'
       REACT_APP_TITLE: '${REACT_APP_TITLE}'
+      REACT_APP_ORGANIZATION_NAME: '${REACT_APP_ORGANIZATION_NAME}'
       REACT_APP_LOGO: '${REACT_APP_LOGO}'
       REACT_APP_FOOTER_LINKS: '${REACT_APP_FOOTER_LINKS}'
       REACT_APP_UAL_APP_NAME: '${REACT_APP_UAL_APP_NAME}'

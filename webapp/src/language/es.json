@@ -5,6 +5,9 @@
     "lightMode": "Modo Claro",
     "darkMode": "Modo Oscuro"
   },
+  "footer":{
+    "copy": "Todos los Derechos Reservados. Elaborado por"
+  },
   "routes": {
     "/>title": "EOSIO Boilerplate",
     "/>sidebar": "Inicio",

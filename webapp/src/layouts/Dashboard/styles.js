@@ -22,6 +22,6 @@ export default (theme, drawerWidth) => ({
     height: '100%',
     padding: theme.spacing(2),
     marginBottom: theme.spacing(2),
-    overflow: 'scroll'
+    overflowY: 'scroll'
   }
 })

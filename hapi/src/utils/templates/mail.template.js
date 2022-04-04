@@ -6,14 +6,6 @@ const HEAD = `
 
 const FOOTER = `
     <div style="background-color: #000; margin-left: auto; margin-right: auto; padding-top: 20px;">
-        <p align="left" style="width: 348px; margin: 0px auto 8px auto; font-family: Arial; font-size: 12px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.33; letter-spacing: 1.5px; text-align: center; color: #fff;">
-            THIS PROJECT WAS FUNDED THROUGH THE PROTON GOVERNANCE COMMITTEE WORKER PROPOSAL SYSTEM
-        </p>
-        <p align="left" style="flex-grow: 0; margin: 0px 16px 14px; font-family: Arial; font-size: 14px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.14; letter-spacing: 0.44px; text-align: center; color: #fff;">
-            <a href="https://forms.gle/GWHig5ciAvg5fdEH7" style="color: #fff;">
-                Apply Here for Funding
-            </a>
-        </p>
         <div style="padding-bottom: 8px; text-align: center;">
             <a href="https://www.facebook.com/protonxpr" style="text-decoration: none;">
                 <img style="width: 32px; height: 32px; margin-right: 16px;" src="https://earnproton.com/icons/facebook.png">
@@ -23,9 +15,6 @@ const FOOTER = `
             </a>
             <a href="https://twitter.com/protonxpr" style="text-decoration: none;">
                 <img style="width: 32px; height: 32px; margin-right: 16px;" src="https://earnproton.com/icons/twitter.png">
-            </a>
-            <a href="https://www.reddit.com/r/ProtonChain" style="text-decoration: none;">
-                <img style="width: 32px; height: 32px; margin-right: 16px;" src="https://earnproton.com/icons/reddit.png">
             </a>
             <a href="https://github.com/edenia/proton-affiliate" style="text-decoration: none;">
                 <img style="width: 32px; height: 32px; margin-right: 16px;" src="https://earnproton.com/icons/github.png">
@@ -37,7 +26,7 @@ const FOOTER = `
     </div>
 `
 
-const generateConfirmation = () => {
+const generateConfirmation = ({ urlOrganization, urlImage }) => {
   return `
     <head>
         ${HEAD}
@@ -46,10 +35,10 @@ const generateConfirmation = () => {
         <table style="margin-left: auto; margin-right: auto;">
             <tr>
                 <div style="max-width: 640px; margin-left: auto; margin-right: auto;">
-                    <a href="https://earnproton.com" style="text-decoration: none; margin: 40px 0px 0px 16px; width: 178px; height: 53px;">
-                        <img style="object-fit: scale-down;" src="https://earnproton.com/icons/proton.png"/>
+                    <a href=${urlOrganization} style="text-decoration: none; margin: 40px 0px 0px 16px; width: 178px; height: 53px;">
+                        <img style="object-fit: scale-down;" src=${urlImage}/>
                     </a>
-                    <p align="left" style="margin: 24px 16px 24px; font-family: Arial; font-size: 21px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: 0.15px; text-align: left; color: #000;">
+                    <p align="left" style="margin: 24px 16px 24px; font-family: Arial; font-size: 20px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: 0.15px; text-align: left; color: #000;">
                       Estimado usuario,
                     </p>
                     <p align="left" style="margin: 0px 16px 8px; font-family: Arial; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.5; letter-spacing: 0.44px; text-align: left; color: #000;">

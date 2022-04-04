@@ -26,6 +26,7 @@ build-docker: ./Dockerfile
 		--build-arg react_app_name="$(REACT_APP_NAME)" \
 		--build-arg react_app_public_re_captcha_key="$(REACT_APP_PUBLIC_RE_CAPTCHA_KEY)" \
 		--build-arg react_app_title="$(REACT_APP_TITLE)" \
+		--build-arg react_app_organization_name="$(REACT_APP_ORGANIZATION_NAME)" \
 		--build-arg react_app_logo="$(REACT_APP_LOGO)" \
 		--build-arg react_app_footer_links="$(REACT_APP_FOOTER_LINKS)" \
 		--build-arg react_app_ual_app_name="$(REACT_APP_UAL_APP_NAME)" \

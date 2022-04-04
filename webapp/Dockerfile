@@ -20,6 +20,7 @@ ENV REACT_APP_TAG $react_app_tag
 ENV REACT_APP_NAME $react_app_name
 ENV REACT_APP_PUBLIC_RE_CAPTCHA_KEY $react_app_public_re_captcha_key
 ENV REACT_APP_TITLE $react_app_title
+ENV REACT_APP_ORGANIZATION_NAME $react_app_organization_name
 ENV REACT_APP_LOGO $react_app_logo
 ENV REACT_APP_FOOTER_LINKS $react_app_footer_links
 ENV REACT_APP_UAL_APP_NAME $react_app_ual_app_name
