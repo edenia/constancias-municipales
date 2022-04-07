@@ -5,7 +5,7 @@ const {
 const Joi = require('joi')
 const Boom = require('@hapi/boom')
 
-const { certificates } = require('../services')
+const { certificates, digitalSignature } = require('../services')
 const { generalConfig, reCaptchaConfig } = require('../config')
 const { mailUtil } = require('../utils')
 const { mailTemplate } = require('../utils/templates')
@@ -17,11 +17,6 @@ module.exports = {
   path: '/generate-constancy',
   handler: async ({ payload: { input } }) => {
     try {
-      // CALL Yaipan API
-      // if (input.idNumber !== '7-0257-0144') {
-      //   return { success: -1 }
-      // }
-
       const [assessment] = await reCaptchaClient.createAssessment({
         parent: reCaptchaClient.projectPath(reCaptchaConfig.projectId),
         assessment: {
@@ -36,12 +31,21 @@ module.exports = {
         return { success: -2 }
       }
 
+      // CALL Yaipan API
+      // if (input.idNumber !== '7-0257-0144') {
+      //   return { success: -1 }
+      // }
+
       const data = await certificates.getOne({
         id: { _eq: input.idNumber }
       })
 
       if (!data) {
+        // CALL Sing BCCR
+        digitalSignature.sign()
+
         await certificates.insert({ id: input.idNumber })
+
         // SEND EMAIL
         mailUtil.send({
           to: input.email,
@@ -54,6 +58,8 @@ module.exports = {
       if (
         new Date(data.updated_at).toDateString() !== new Date().toDateString()
       ) {
+        // CALL Sing BCCR
+
         await certificates.update({
           where: {
             id: { _eq: input.idNumber }
@@ -66,6 +72,8 @@ module.exports = {
         if (data.emitted_quantity >= generalConfig.certificateLimit)
           return { success: 0 }
         else {
+          // CALL Sing BCCR
+
           await certificates.update({
             where: {
               id: { _eq: input.idNumber }

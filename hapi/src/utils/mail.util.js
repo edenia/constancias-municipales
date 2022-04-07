@@ -1,6 +1,17 @@
 const nodemailer = require('nodemailer')
 const {
-  mailConfig: { host, port, user, pass, urlOrganization, urlImage }
+  mailConfig: {
+    host,
+    port,
+    user,
+    pass,
+    urlOrganization,
+    urlImage,
+    facebookLink,
+    twitterLink,
+    instagramLink,
+    youtubeLink
+  }
 } = require('../config')
 
 const send = async ({ to, subject, template }) => {
@@ -18,7 +29,11 @@ const send = async ({ to, subject, template }) => {
       subject,
       html: template({
         urlOrganization,
-        urlImage
+        urlImage,
+        facebookLink,
+        twitterLink,
+        instagramLink,
+        youtubeLink
       })
     })
   } catch (error) {

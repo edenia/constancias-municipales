@@ -4,29 +4,40 @@ const HEAD = `
     <meta name="viewport" content="width=device-width, initial-scale=1">
 `
 
-const FOOTER = `
+const getFooter = ({
+  facebookLink,
+  twitterLink,
+  instagramLink,
+  youtubeLink
+}) => {
+  return `
     <div style="background-color: #000; margin-left: auto; margin-right: auto; padding-top: 20px;">
         <div style="padding-bottom: 8px; text-align: center;">
-            <a href="https://www.facebook.com/protonxpr" style="text-decoration: none;">
+            <a href=${facebookLink} style="text-decoration: none;">
                 <img style="width: 32px; height: 32px; margin-right: 16px;" src="https://earnproton.com/icons/facebook.png">
             </a>
-            <a href="https://www.instagram.com/protonxpr" style="text-decoration: none;">
+            <a href=${instagramLink} style="text-decoration: none;">
                 <img style="width: 32px; height: 32px; margin-right: 16px;" src="https://earnproton.com/icons/instagram.png">
             </a>
-            <a href="https://twitter.com/protonxpr" style="text-decoration: none;">
+            <a href=${twitterLink} style="text-decoration: none;">
                 <img style="width: 32px; height: 32px; margin-right: 16px;" src="https://earnproton.com/icons/twitter.png">
             </a>
-            <a href="https://github.com/edenia/proton-affiliate" style="text-decoration: none;">
+            <a href=${youtubeLink} style="text-decoration: none;">
                 <img style="width: 32px; height: 32px; margin-right: 16px;" src="https://earnproton.com/icons/github.png">
-            </a>
-            <a href="https://t.me/protonxpr" style="text-decoration: none;">
-                <img style="width: 32px; height: 32px;" src="https://earnproton.com/icons/telegram.png">
             </a>
         </div>
     </div>
 `
+}
 
-const generateConfirmation = ({ urlOrganization, urlImage }) => {
+const generateConfirmation = ({
+  urlOrganization,
+  urlImage,
+  facebookLink,
+  twitterLink,
+  instagramLink,
+  youtubeLink
+}) => {
   return `
     <head>
         ${HEAD}
@@ -66,7 +77,12 @@ const generateConfirmation = ({ urlOrganization, urlImage }) => {
                 </div>
             </tr>
             <tr>
-                ${FOOTER}
+                ${getFooter({
+                  facebookLink,
+                  twitterLink,
+                  instagramLink,
+                  youtubeLink
+                })}
             </tr>
         </table>
     </body>
