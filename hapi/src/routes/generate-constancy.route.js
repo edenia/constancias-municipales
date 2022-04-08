@@ -5,7 +5,7 @@ const {
 const Joi = require('joi')
 const Boom = require('@hapi/boom')
 
-const { certificates, digitalSignature } = require('../services')
+const { certificates } = require('../services')
 const { generalConfig, reCaptchaConfig } = require('../config')
 const { mailUtil } = require('../utils')
 const { mailTemplate } = require('../utils/templates')
@@ -42,7 +42,7 @@ module.exports = {
 
       if (!data) {
         // CALL Sing BCCR
-        digitalSignature.sign()
+        // digitalSignature.sign()
 
         await certificates.insert({ id: input.idNumber })
 

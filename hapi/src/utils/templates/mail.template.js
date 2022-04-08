@@ -49,10 +49,11 @@ const generateConfirmation = ({
                     <a href=${urlOrganization} style="text-decoration: none; margin: 40px 0px 0px 16px; width: 178px; height: 53px;">
                         <img style="object-fit: scale-down;" src=${urlImage}/>
                     </a>
-                    <p align="left" style="margin: 24px 16px 24px; font-family: Arial; font-size: 20px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: 0.15px; text-align: left; color: #000;">
+                    <p align="left" style="margin-top: 24px; font-family: Arial; font-size: 20px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: normal; letter-spacing: 0.15px; text-align: left; color: #000;">
                       Estimado usuario,
                     </p>
-                    <p align="left" style="margin: 0px 16px 8px; font-family: Arial; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.5; letter-spacing: 0.44px; text-align: left; color: #000;">
+                    <img width="30%" src="https://raw.githubusercontent.com/edenia/constancias-municipales/main/webapp/public/icons/line-icon.png" />
+                    <p align="left" style="margin: 24px 16px 8px; font-family: Arial; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.5; letter-spacing: 0.44px; text-align: left; color: #000;">
                       Adjunto encontrará la constancia digital de impuestos al día para propiedades solicitada desde la 
                       plataforma en línea de la Municipalidad de Orotina. Este documento ha sido firmado digitalmente con la 
                       firma digital del Banco Central de Costa Rica, la cual tiene validez en otras instituciones del país. 
