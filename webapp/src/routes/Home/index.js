@@ -1,20 +1,14 @@
 import React, { memo, useState, useEffect } from 'react'
-import { Box, Grid, Divider, Typography, CircularProgress } from '@mui/material'
+import { Box, Grid, Typography, CircularProgress } from '@mui/material'
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
-import { FeedOutlined } from '@mui/icons-material'
 import { useTranslation } from 'react-i18next'
 import { Formik, Form, Field } from 'formik'
 import { useMutation } from '@apollo/client'
-import { makeStyles } from '@mui/styles'
 
 import { useSharedState } from '../../context/state.context'
 import { BaseTextField, BaseButton } from '../../components'
 import { MUTATION_GENERATE_CONSTANCY } from '../../gql'
 import { requestProofSchema } from '../../schemas'
-
-import styles from './styles'
-
-const useStyles = makeStyles(styles)
 
 const { defaultValues, schema } = requestProofSchema
 
@@ -23,7 +17,6 @@ const Home = () => {
   const { executeRecaptcha } = useGoogleReCaptcha()
   const [, { showMessage }] = useSharedState()
   const { t } = useTranslation('homeRoute')
-  const classes = useStyles()
 
   const [generateConstancy, { error: errorGenerateConstancy }] = useMutation(
     MUTATION_GENERATE_CONSTANCY
@@ -53,13 +46,13 @@ const Home = () => {
   return (
     <Grid container>
       <Grid item md={12}>
-        <Box mt={6}>
-          <FeedOutlined className={classes.iconStyle} />
+        <Box mt={6} mb={2}>
+          <img width={180} src="icons/paper-icon.png" />
         </Box>
-        <Box mb={2}>
+        <Box mb={1}>
           <Typography variant="h4">{t('municipalRecordsManager')}</Typography>
         </Box>
-        <Divider />
+        <img width="50%" src="icons/line-icon.png" />
         <Typography variant="h6" component="div">
           <Box pt={6} width="50%" fontWeight="bold">
             {t('subtitle')}

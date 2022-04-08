@@ -1,17 +1,10 @@
 import React, { memo } from 'react'
-import { makeStyles } from '@mui/styles'
 import { useTranslation } from 'react-i18next'
-import { CheckRounded } from '@mui/icons-material'
 import { Box, Grid, Link, Typography } from '@mui/material'
 
 import { BaseButton } from '../../components'
 
-import styles from './styles'
-
-const useStyles = makeStyles(styles)
-
 const Thanks = () => {
-  const classes = useStyles()
   const { t } = useTranslation('thanksRoute')
 
   return (
@@ -19,7 +12,7 @@ const Thanks = () => {
       <Box margin="auto" textAlign="center">
         <Grid container justifyContent="center">
           <Grid item md={10}>
-            <CheckRounded className={classes.iconStyle} />
+            <img src="icons/check-icon.png" />
             <Box pt={4}>
               <Typography variant="h5">{t('thanksMessageTitle')}</Typography>
             </Box>
@@ -51,7 +44,5 @@ const Thanks = () => {
     </Box>
   )
 }
-
-Thanks.propTypes = {}
 
 export default memo(Thanks)
