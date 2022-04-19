@@ -12,18 +12,18 @@ const getFooter = ({
 }) => {
   return `
     <div style="background-color: #000; margin-left: auto; margin-right: auto; padding-top: 20px;">
-        <div style="padding-bottom: 8px; text-align: center;">
+        <div style="padding-bottom: 12px; text-align: center;">
             <a href=${facebookLink} style="text-decoration: none;">
-                <img style="width: 32px; height: 32px; margin-right: 16px;" src="https://earnproton.com/icons/facebook.png">
+                <img style="width: 50px; height: 50px; margin-right: 30px;" src="https://raw.githubusercontent.com/edenia/constancias-municipales/main/webapp/public/icons/facebook-icon.png">
             </a>
             <a href=${instagramLink} style="text-decoration: none;">
-                <img style="width: 32px; height: 32px; margin-right: 16px;" src="https://earnproton.com/icons/instagram.png">
+                <img style="width: 50px; height: 50px; margin-right: 30px;" src="https://raw.githubusercontent.com/edenia/constancias-municipales/main/webapp/public/icons/instagram-icon.png">
             </a>
             <a href=${twitterLink} style="text-decoration: none;">
-                <img style="width: 32px; height: 32px; margin-right: 16px;" src="https://earnproton.com/icons/twitter.png">
+                <img style="width: 50px; height: 50px; margin-right: 30px;" src="https://raw.githubusercontent.com/edenia/constancias-municipales/main/webapp/public/icons/twitter-icon.png">
             </a>
             <a href=${youtubeLink} style="text-decoration: none;">
-                <img style="width: 32px; height: 32px; margin-right: 16px;" src="https://earnproton.com/icons/github.png">
+                <img style="width: 50px; height: 50px; margin-right: 30px;" src="https://raw.githubusercontent.com/edenia/constancias-municipales/main/webapp/public/icons/youtube-icon.png">
             </a>
         </div>
     </div>

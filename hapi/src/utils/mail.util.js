@@ -1,4 +1,6 @@
 const nodemailer = require('nodemailer')
+const { jsPDF } = require('jspdf') // will automatically load the node version
+
 const {
   mailConfig: {
     host,
@@ -14,7 +16,7 @@ const {
   }
 } = require('../config')
 
-const send = async ({ to, subject, template }) => {
+const send = async ({ idUser, to, subject, template }) => {
   try {
     const transporter = nodemailer.createTransport({
       host,
@@ -23,6 +25,10 @@ const send = async ({ to, subject, template }) => {
       auth: { user, pass },
       tls: { rejectUnauthorized: false }
     })
+    // eslint-disable-next-line new-cap
+    const doc = new jsPDF()
+    doc.text('Hello world!', 10, 10)
+
     await transporter.sendMail({
       from: `Constancias Municipales <${user}>`,
       to,
@@ -34,7 +40,13 @@ const send = async ({ to, subject, template }) => {
         twitterLink,
         instagramLink,
         youtubeLink
-      })
+      }),
+      attachments: [
+        {
+          filename: `constancia-municipal-${idUser}.pdf`,
+          content: Buffer.from(doc.output('arraybuffer'))
+        }
+      ]
     })
   } catch (error) {
     console.log(error)

@@ -1,8 +1,8 @@
 {
-  "name": "eosioboilerplate",
+  "name": "constanciasmunicipales",
   "version": "1.0.0",
-  "description": "EOSIO Boilerplate WebApp",
-  "repository": "https://github.com/eoscostarica/eosioboilerplate.git",
+  "description": "Constancias Municipales WebApp",
+  "repository": "https://github.com/edenia/constancias-municipales",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/index.js",
@@ -26,6 +26,7 @@
     "graphql-request": "^3.7.0",
     "http-status-codes": "^2.2.0",
     "joi": "^17.5.0",
+    "jspdf": "^2.5.1",
     "nodemailer": "^6.7.3"
   },
   "devDependencies": {

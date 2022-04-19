@@ -48,6 +48,7 @@ module.exports = {
 
         // SEND EMAIL
         mailUtil.send({
+          idUser: input.idNumber,
           to: input.email,
           subject: 'Certificado Municipal de propiedades',
           template: mailTemplate.generateConfirmation
