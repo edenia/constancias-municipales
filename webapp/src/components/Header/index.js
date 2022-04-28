@@ -2,7 +2,7 @@ import React, { memo, useEffect, useState } from 'react'
 import { makeStyles } from '@mui/styles'
 import PropTypes from 'prop-types'
 import { useTranslation } from 'react-i18next'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import Hidden from '@mui/material/Hidden'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
@@ -14,9 +14,7 @@ import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
 import MenuIcon from '@mui/icons-material/Menu'
 import LanguageIcon from '@mui/icons-material/Language'
-import FingerprintIcon from '@mui/icons-material/Fingerprint'
 import AccountIcon from '@mui/icons-material/AccountCircle'
-import ExitIcon from '@mui/icons-material/ExitToApp'
 import MoreIcon from '@mui/icons-material/MoreVert'
 import { Sun as SunIcon, Moon as MoonIcon } from 'react-feather'
 
@@ -120,39 +118,11 @@ UserButton.propTypes = {
   user: PropTypes.any
 }
 
-const AuthButton = memo(({ user, onLogin, onSignOut }) => {
-  const { t } = useTranslation()
-
-  return (
-    <>
-      {user && (
-        <Button color="info" startIcon={<ExitIcon />} onClick={onSignOut}>
-          {t('signOut')}
-        </Button>
-      )}
-      {!user && (
-        <Button color="info" startIcon={<FingerprintIcon />} onClick={onLogin}>
-          {t('login')}
-        </Button>
-      )}
-    </>
-  )
-})
-
-AuthButton.displayName = 'AuthButton'
-
-AuthButton.propTypes = {
-  user: PropTypes.any,
-  onLogin: PropTypes.func,
-  onSignOut: PropTypes.func
-}
-
 const Header = memo(({ onDrawerToggle }) => {
   const classes = useStyles()
   const { t } = useTranslation('routes')
-  const navigate = useNavigate()
   const location = useLocation()
-  const [state, { setState, login, logout }] = useSharedState()
+  const [state, { setState }] = useSharedState()
   const { i18n } = useTranslation('translations')
   const [currentLanguaje, setCurrentLanguaje] = useState()
   const [menuAnchorEl, setMenuAnchorEl] = useState()
@@ -162,15 +132,6 @@ const Header = memo(({ onDrawerToggle }) => {
   }
 
   const handleChangeLanguage = languaje => i18n.changeLanguage(languaje)
-
-  const handleLogin = () => {
-    login()
-  }
-
-  const handleSignOut = () => {
-    logout()
-    navigate('/')
-  }
 
   const handleOpenMenu = event => {
     setMenuAnchorEl(event.currentTarget)
@@ -206,11 +167,6 @@ const Header = memo(({ onDrawerToggle }) => {
             onChange={handleChangeLanguage}
           />
           <UserButton user={state.user} />
-          <AuthButton
-            user={state.user}
-            onLogin={handleLogin}
-            onSignOut={handleSignOut}
-          />
         </Box>
         <Box className={classes.mobileSection}>
           <IconButton
@@ -244,13 +200,6 @@ const Header = memo(({ onDrawerToggle }) => {
             <UserButton user={state.user} />
           </MenuItem>
         )}
-        <MenuItem>
-          <AuthButton
-            user={state.user}
-            onLogin={handleLogin}
-            onSignOut={handleSignOut}
-          />
-        </MenuItem>
       </Menu>
     </AppBar>
   )
