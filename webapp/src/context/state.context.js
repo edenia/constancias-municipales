@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 const SharedStateContext = React.createContext()
@@ -10,12 +10,6 @@ const initialValue = {
 
 const sharedStateReducer = (state, action) => {
   switch (action.type) {
-    case 'ual':
-      return {
-        ...state,
-        ual: action.ual
-      }
-
     case 'userChange':
       return {
         ...state,
@@ -41,16 +35,6 @@ const sharedStateReducer = (state, action) => {
         message: null
       }
 
-    case 'login':
-      state.ual.showModal()
-
-      return state
-
-    case 'logout':
-      state.ual.logout()
-
-      return state
-
     default: {
       throw new Error(`Unsupported action type: ${action.type}`)
     }
@@ -63,15 +47,6 @@ export const SharedStateProvider = ({ children, ual, ...props }) => {
     ual
   })
   const value = React.useMemo(() => [state, dispatch], [state])
-
-  useEffect(() => {
-    const load = async () => {
-      dispatch({ type: 'userChange', user: ual.activeUser })
-      dispatch({ type: 'ual', ual })
-    }
-
-    load()
-  }, [ual?.activeUser])
 
   return (
     <SharedStateContext.Provider value={value} {...props}>
