@@ -19,7 +19,11 @@ const Footer = () => {
         <Grid item xs={12}>
           <Typography align="center" variant="body1">
             © 2022 {mainConfig.organizationName}. {t('copy')}
-            <Link underline="hover" href="https://edenia.com/es">
+            <Link
+              underline="hover"
+              color="secondary"
+              href="https://edenia.com/es"
+            >
               {' '}
               Edenia
             </Link>

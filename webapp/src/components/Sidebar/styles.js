@@ -4,10 +4,6 @@ export default theme => ({
     display: 'flex',
     justifyContent: 'center',
     padding: theme.spacing(3),
-    '& img': {
-      width: 'auto',
-      height: '125px'
-    },
     '& img:hover': {
       cursor: 'pointer'
     }
