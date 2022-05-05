@@ -144,6 +144,7 @@ const Sidebar = ({ routes, ...props }) => {
     <Drawer {...props}>
       <Box className={classes.brand}>
         <img
+          width="100%"
           alt={mainConfig.title}
           src={mainConfig.logo}
           onClick={() => navigate('/')}
