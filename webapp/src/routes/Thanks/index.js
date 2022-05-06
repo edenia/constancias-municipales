@@ -4,6 +4,7 @@ import { Box, Grid, Link, Typography, useMediaQuery } from '@mui/material'
 import { useTheme } from '@mui/styles'
 
 import { BaseButton } from '../../components'
+import { mainConfig } from '../../config'
 
 const Thanks = () => {
   const theme = useTheme()
@@ -57,7 +58,7 @@ const Thanks = () => {
               </Grid>
               <Grid md={3}>
                 <Box pt={5}>
-                  <Link underline="none" href="https://muniorotina.go.cr/">
+                  <Link underline="none" href={mainConfig.urlOrganization}>
                     <BaseButton variant="contained" color="primary">
                       {t('returnSite')}
                     </BaseButton>

@@ -1,12 +1,5 @@
 version: '3.6'
 services:
-  wallet:
-    container_name: 'boilerplate-wallet'
-    build: ./wallet
-    ports:
-      - '8888:8888'
-    volumes:
-      - ./tmp/wallet/:/opt/application/data/
   postgres:
     container_name: 'boilerplate-postgres'
     image: postgres:13.3-alpine
@@ -37,7 +30,6 @@ services:
       HAPI_NETWORK_CHAIN_ID: '${HAPI_NETWORK_CHAIN_ID}'
       HAPI_NETWORK_BASE_ACCOUNT: '${HAPI_NETWORK_BASE_ACCOUNT}'
       HAPI_NETWORK_BASE_PASSWORD: '${HAPI_NETWORK_BASE_PASSWORD}'
-      HAPI_NETWORK_WALLET_URL: '${HAPI_NETWORK_WALLET_URL}'
       HAPI_HASURA_URL: '${HAPI_HASURA_URL}'
       HAPI_HASURA_ADMIN_SECRET: '${HAPI_HASURA_ADMIN_SECRET}'
       HAPI_CERTIFICATE_LIMIT: '${HAPI_CERTIFICATE_LIMIT}'
@@ -105,5 +97,6 @@ services:
       REACT_APP_UAL_CHAIN_ID: '${REACT_APP_UAL_CHAIN_ID}'
       REACT_APP_HASURA_URL: '${REACT_APP_HASURA_URL}'
       REACT_APP_PUBLIC_RE_CAPTCHA_KEY: '${REACT_APP_PUBLIC_RE_CAPTCHA_KEY}'
+      REACT_APP_URL_ORGANIZATION: '${REACT_APP_URL_ORGANIZATION}'
 volumes:
   postgres_data:
