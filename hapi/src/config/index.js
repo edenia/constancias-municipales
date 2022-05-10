@@ -3,5 +3,6 @@ module.exports = {
   hasuraConfig: require('./hasura.config'),
   serverConfig: require('./server.config'),
   generalConfig: require('./general.config'),
-  reCaptchaConfig: require('./reCaptcha.config')
+  reCaptchaConfig: require('./reCaptcha.config'),
+  yaipanConfig: require('./yaipan.config')
 }

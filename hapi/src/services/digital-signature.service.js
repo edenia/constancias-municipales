@@ -1,4 +1,4 @@
-const fetch = require('node-fetch')
+// const fetch = require('node-fetch')
 
 // const SERVICE_URLS = {
 //   autenticacion: 'WebServices/Bccr.Firma.Fva.Entidades.Ws.BS/Autenticador.asmx',

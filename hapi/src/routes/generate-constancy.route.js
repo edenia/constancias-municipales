@@ -5,7 +5,7 @@ const {
 const Joi = require('joi')
 const Boom = require('@hapi/boom')
 
-const { certificates } = require('../services')
+const { certificates, getConstancy } = require('../services')
 const { generalConfig, reCaptchaConfig } = require('../config')
 const { mailUtil } = require('../utils')
 const { mailTemplate } = require('../utils/templates')
@@ -32,9 +32,10 @@ module.exports = {
       }
 
       // CALL Yaipan API
-      // if (input.idNumber !== '7-0257-0144') {
-      //   return { success: -1 }
-      // }
+      const constancia = await getConstancy.getConstancy({ id: input.idNumber })
+      if (!constancia) {
+        return { success: -1 }
+      }
 
       const data = await certificates.getOne({
         id: { _eq: input.idNumber }
@@ -51,7 +52,8 @@ module.exports = {
           idUser: input.idNumber,
           to: input.email,
           subject: 'Certificado Municipal de propiedades',
-          template: mailTemplate.generateConfirmation
+          template: mailTemplate.generateConfirmation,
+          constancia
         })
         return { success: 1 }
       }
@@ -91,7 +93,8 @@ module.exports = {
         idUser: input.idNumber,
         to: input.email,
         subject: 'Certificado Municipal de propiedades',
-        template: mailTemplate.generateConfirmation
+        template: mailTemplate.generateConfirmation,
+        constancia
       })
 
       return { success: 1 }
