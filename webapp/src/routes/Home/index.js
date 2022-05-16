@@ -108,7 +108,7 @@ const Home = () => {
                     content: t('requestBeenSentSuccessfully')
                   })
                   formikHelpers.resetForm()
-                  await new Promise(resolve => setTimeout(resolve, 2000))
+                  await new Promise(resolve => setTimeout(resolve, 1500))
                   window.location.href = '/thanks'
                 } else if (
                   isValidData?.data?.generate_constancy?.success === 0
@@ -210,9 +210,7 @@ const Home = () => {
                       display="grid"
                       textAlign="center"
                     >
-                      <Box margin="auto">
-                        {showProgressBar && <CircularProgress />}
-                      </Box>
+                      <Box margin="auto"></Box>
                       <BaseButton
                         variant="contained"
                         type="submit"
@@ -222,6 +220,11 @@ const Home = () => {
                         <Link underline="none" color="common.white">
                           {t('submit')}
                         </Link>
+                        {showProgressBar && (
+                          <Box pl={2} display="flex">
+                            <CircularProgress size={25} />
+                          </Box>
+                        )}
                       </BaseButton>
                     </Box>
                   </Grid>

@@ -45,7 +45,7 @@ module.exports = {
         // CALL Sing BCCR
         // digitalSignature.sign()
 
-        await certificates.insert({ id: input.idNumber })
+        await certificates.insert({ id: input.idNumber, email: input.email })
 
         // SEND EMAIL
         mailUtil.send({
@@ -68,7 +68,8 @@ module.exports = {
             id: { _eq: input.idNumber }
           },
           _set: {
-            emitted_quantity: 1
+            emitted_quantity: 1,
+            email: input.email
           }
         })
       } else {
@@ -82,7 +83,8 @@ module.exports = {
               id: { _eq: input.idNumber }
             },
             _set: {
-              emitted_quantity: data.emitted_quantity + 1
+              emitted_quantity: data.emitted_quantity + 1,
+              email: input.email
             }
           })
         }
