@@ -20,6 +20,7 @@
     "@hapi/boom": "^9.1.4",
     "@hapi/hapi": "^20.2.1",
     "axios": "^0.25.0",
+    "crypto": "^1.0.1",
     "eosjs": "^22.1.0",
     "eosjs-api": "^7.0.4",
     "graphql": "^16.2.0",

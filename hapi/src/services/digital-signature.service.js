@@ -1,52 +1,41 @@
-// const fetch = require('node-fetch')
-
-// const SERVICE_URLS = {
-//   autenticacion: 'WebServices/Bccr.Firma.Fva.Entidades.Ws.BS/Autenticador.asmx',
-//   firma: 'WebServices/Bccr.Firma.Fva.Entidades.Ws.BS/Firmador.asmx',
-//   valida_certificado:
-//     'WebServices/Bccr.Firma.Fva.Entidades.Ws.BS/ValidadorDeCertificado.asmx',
-//   valida_documento:
-//     'WebServices/Bccr.Firma.Fva.Entidades.Ws.BS/ValidadorDeDocumento.asmx',
-//   valida_docs_v2:
-//     'WebServices/Bccr.Firma.Fva.Entidades.ValidarDocumento.Ws.SI/ValidadorDeDocumentos.asmx',
-//   verifica: 'WebServices/Bccr.Firma.Fva.Entidades.Ws.BS/Verificador.asmx',
-//   sello:
-//     'WebServices/Bccr.Firma.Fva.Entidades.Ws.SI/SelladorElectronicoConControlDeLlave.asmx'
-// }
-
-// const TEST_SERVICE_URLS = {
-//   autenticacion:
-//     'WebServices/Bccr.Fva.Entidades.AmbienteDePruebas.Ws.BS/Autenticador.asmx',
-//   firma: 'WebServices/Bccr.Fva.Entidades.AmbienteDePruebas.Ws.BS/Firmador.asmx',
-//   valida_certificado:
-//     'WebServices/Bccr.Firma.Fva.Entidades.Ws.BS/ValidadorDeCertificado.asmx',
-//   valida_documento:
-//     'WebServices/Bccr.Firma.Fva.Entidades.Ws.BS/ValidadorDeDocumento.asmx',
-//   valida_docs_v2:
-//     'WebServices/Bccr.Firma.Fva.Entidades.ValidarDocumento.Ws.SI/ValidadorDeDocumentos.asmx',
-//   verifica:
-//     'WebServices/Bccr.Fva.Entidades.AmbienteDePruebas.Ws.BS/Verificador.asmx',
-//   sello:
-//     'WebServices/Bccr.Fva.Entidades.AmbDePruebas.Sello.Ws.SI/SelladorElectronicoConControlDeLlave.asmx'
-// }
+const fetch = require('node-fetch')
+const Boom = require('@hapi/boom')
 
 const sign = async () => {
-  const requestOptions = {
-    identidad: '08-0888-0888',
-    documento: 'PG1vdmllPgogIDx0...CjwvbW92aWU+Cg==',
-    formato: 'pdf',
-    algoritmo_hash: 'Sha512',
-    hash_doc: '637a7d07c5dbee59695aafbd3933b...bd3933b',
-    resumen: 'este es un mensaje amigable sobre el documento',
-    lugar: 'Limon',
-    razon: 'Pruebas'
+  // Dim elCertificadoDeLaEntidad As X509Certificate
+  // const elCertificadoDeLaEntidad
+  // Dim laSolicitudDeFirma As SolicitudDeFirma
+  // const elCertificadoDeLaEntidad
+  // Dim laRespuestaDelServicio As RespuestaDeLaSolicitud
+  // const laRespuestaDelServicio
+  try {
+    // const elCertificadoDeLaEntidad = ObtengaElCertificadoDeAgenteElectronico()
+    // const laSolicitudDeFirma = CreeLaSolicitudDeFirma()
+    // const elServicio = new Ws.ServicioFirmador.Firmador
+    // elServicio.Url = ObtengaLaUrlDelServicioFirmador()
+    // elServicio.ClientCertificates.Add(elCertificadoDeLaEntidad)
+    // laRespuestaDelServicio =
+    //   elServicio.RecibaLaSolicitudDeFirmaXmlEnvelopedCoFirma(laSolicitudDeFirma)
+  } catch (error) {
+    console.log({ error })
+    throw Boom.badRequest(error.message, { code: 'BAD_REQUEST' })
   }
-  const response = await fetch(
-    'http://bccr.fva.cr/WebServices/Bccr.Fva.Entidades.AmbienteDePruebas.Ws.BS/Firmador.asmx',
-    requestOptions
-  )
 
-  return response
+  // const requestOptions = {
+  //   CodNegocio: '08-0888-0888',
+  //   FechaDeReferenciaDeLaEntidad: '17/5/2022',
+  //   Documento: 'PG1vdmllPgogIDx0...CjwvbW92aWU+Cg==',
+  //   IDAlgoritmoHash: 'sha256',
+  //   HashDocumento: '637a7d07c5dbee59695aafbd3933b...bd3933b',
+  //   Lugar: 'Limon',
+  //   Razon: 'Pruebas'
+  // }
+  // const response = await fetch(
+  //   'http://bccr.fva.cr/WebServices/Bccr.Fva.Entidades.AmbienteDePruebas.Ws.BS/Firmador.asmx',
+  //   requestOptions
+  // )
+  // // 'WebServices/Bccr.Fva.Entidades.AmbDePruebas.Sello.Ws.SI/SelladorElectronicoConControlDeLlave.asmx'
+  // return response
 }
 
 module.exports = {

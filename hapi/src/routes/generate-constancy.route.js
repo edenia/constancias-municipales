@@ -5,7 +5,7 @@ const {
 const Joi = require('joi')
 const Boom = require('@hapi/boom')
 
-const { certificates, getConstancy } = require('../services')
+const { certificates, constancy, hash } = require('../services')
 const { generalConfig, reCaptchaConfig } = require('../config')
 const { mailUtil } = require('../utils')
 const { mailTemplate } = require('../utils/templates')
@@ -32,7 +32,7 @@ module.exports = {
       }
 
       // CALL Yaipan API
-      const constancia = await getConstancy.getConstancy({ id: input.idNumber })
+      const constancia = await constancy.getConstancy({ id: input.idNumber })
       if (!constancia) {
         return { success: -1 }
       }
@@ -40,7 +40,8 @@ module.exports = {
       const data = await certificates.getOne({
         id: { _eq: input.idNumber }
       })
-
+      const docHash = hash.generateHash(constancia)
+      console.log({ docHash })
       if (!data) {
         // CALL Sing BCCR
         // digitalSignature.sign()

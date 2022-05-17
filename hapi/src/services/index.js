@@ -1,5 +1,6 @@
-const certificates = require('./certificates.service')
 const digitalSignature = require('./digital-signature.service')
-const getConstancy = require('./get-constancy.service')
+const certificates = require('./certificates.service')
+const constancy = require('./get-constancy.service')
+const hash = require('./generate-hash.service')
 
-module.exports = { certificates, digitalSignature, getConstancy }
+module.exports = { certificates, digitalSignature, constancy, hash }
