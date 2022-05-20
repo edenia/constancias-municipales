@@ -5,7 +5,12 @@ const {
 const Joi = require('joi')
 const Boom = require('@hapi/boom')
 
-const { certificates, constancy, hash } = require('../services')
+const {
+  certificates,
+  constancy,
+  hash,
+  certificateAgent
+} = require('../services')
 const { generalConfig, reCaptchaConfig } = require('../config')
 const { mailUtil } = require('../utils')
 const { mailTemplate } = require('../utils/templates')
@@ -30,7 +35,7 @@ module.exports = {
       if (assessment.tokenProperties.valid !== true) {
         return { success: -2 }
       }
-
+      certificateAgent.getCertificateAgent()
       // CALL Yaipan API
       const constancia = await constancy.getConstancy({ id: input.idNumber })
       if (!constancia) {

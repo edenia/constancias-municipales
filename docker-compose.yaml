@@ -48,6 +48,7 @@ services:
       HAPI_TWITTER_LINK: '${HAPI_TWITTER_LINK}'
       HAPI_INSTAGRAM_LINK: '${HAPI_INSTAGRAM_LINK}'
       HAPI_YOUTUBE_LINK: '${HAPI_YOUTUBE_LINK}'
+      HAPI_URL_SERVICIO_SELLADOR: '${HAPI_URL_SERVICIO_SELLADOR}'
   hasura:
     container_name: 'boilerplate-hasura'
     image: hasura/graphql-engine:v2.0.4.cli-migrations-v3

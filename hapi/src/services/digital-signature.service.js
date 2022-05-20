@@ -1,21 +1,32 @@
 const fetch = require('node-fetch')
 const Boom = require('@hapi/boom')
+const { bccrConfig } = require('../config')
 
-const sign = async () => {
+const sign = async ({ doc, hashDocumento }) => {
   // Dim elCertificadoDeLaEntidad As X509Certificate
   // const elCertificadoDeLaEntidad
   // Dim laSolicitudDeFirma As SolicitudDeFirma
   // const elCertificadoDeLaEntidad
   // Dim laRespuestaDelServicio As RespuestaDeLaSolicitud
   // const laRespuestaDelServicio
+
+  // const requestOptions = {
+  //   CodNegocio: '08-0888-0888',
+  //   FechaDeReferenciaDeLaEntidad: '17/5/2022',
+  //   Documento: doc,
+  //   IDAlgoritmoHash: 'sha256',
+  //   HashDocumento: hashDocumento,
+  //   Lugar: 'Limon',
+  //   Razon: 'Pruebas'
+  // }
   try {
     // const elCertificadoDeLaEntidad = ObtengaElCertificadoDeAgenteElectronico()
     // const laSolicitudDeFirma = CreeLaSolicitudDeFirma()
-    // const elServicio = new Ws.ServicioFirmador.Firmador
+    // const elServicio = new Ws.ServicioFirmador.Firmador()
     // elServicio.Url = ObtengaLaUrlDelServicioFirmador()
     // elServicio.ClientCertificates.Add(elCertificadoDeLaEntidad)
-    // laRespuestaDelServicio =
-    //   elServicio.RecibaLaSolicitudDeFirmaXmlEnvelopedCoFirma(laSolicitudDeFirma)
+    // const laRespuestaDelServicio =
+    //   elServicio.RecibaLaSolicitudDeSelladoElectronicoPdf(laSolicitudDeFirma)
   } catch (error) {
     console.log({ error })
     throw Boom.badRequest(error.message, { code: 'BAD_REQUEST' })
@@ -34,7 +45,7 @@ const sign = async () => {
   //   'http://bccr.fva.cr/WebServices/Bccr.Fva.Entidades.AmbienteDePruebas.Ws.BS/Firmador.asmx',
   //   requestOptions
   // )
-  // // 'WebServices/Bccr.Fva.Entidades.AmbDePruebas.Sello.Ws.SI/SelladorElectronicoConControlDeLlave.asmx'
+  // // 'https://firmadorexterno.bccr.fi.cr/WebServices/Bccr.Fva.Entidades.AmbDePruebas.Sello.Ws.SI/SelladorElectronicoConControlDeLlave.asmx'
   // return response
 }
 
