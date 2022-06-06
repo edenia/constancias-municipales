@@ -50,7 +50,7 @@ module.exports = {
 
       if (!data) {
         // CALL Sing BCCR
-        signedDoc = await digitalSignature.sign({constancia, docHash})
+        signedDoc = await digitalSignature.sign({ constancia, docHash })
         await certificates.insert({ id: input.idNumber, email: input.email })
 
         // SEND EMAIL
@@ -68,7 +68,7 @@ module.exports = {
         new Date(data.updated_at).toDateString() !== new Date().toDateString()
       ) {
         // CALL Sing BCCR
-        signedDoc = await digitalSignature.sign({constancia, docHash})
+        signedDoc = await digitalSignature.sign({ constancia, docHash })
         await certificates.update({
           where: {
             id: { _eq: input.idNumber }
@@ -83,7 +83,7 @@ module.exports = {
           return { success: 0 }
         else {
           // CALL Sing BCCR
-          signedDoc = await digitalSignature.sign({constancia, docHash})
+          signedDoc = await digitalSignature.sign({ constancia, docHash })
           await certificates.update({
             where: {
               id: { _eq: input.idNumber }
@@ -107,7 +107,7 @@ module.exports = {
 
       return { success: 1 }
     } catch (error) {
-      console.log({error})
+      console.log({ error })
       throw Boom.badRequest(error.message, { code: 'BAD_REQUEST' })
     }
   },
