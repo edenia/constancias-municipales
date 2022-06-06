@@ -40,7 +40,8 @@ const send = async ({ idUser, to, subject, template, constancia }) => {
       attachments: [
         {
           filename: `constancia-municipal-${idUser}.pdf`,
-          content: constancia
+          content: constancia,
+          encoding: 'base64'
         }
       ]
     })

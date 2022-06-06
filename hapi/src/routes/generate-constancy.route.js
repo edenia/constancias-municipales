@@ -9,7 +9,7 @@ const {
   certificates,
   constancy,
   hash,
-  certificateAgent
+  digitalSignature
 } = require('../services')
 const { generalConfig, reCaptchaConfig } = require('../config')
 const { mailUtil } = require('../utils')
@@ -35,9 +35,10 @@ module.exports = {
       if (assessment.tokenProperties.valid !== true) {
         return { success: -2 }
       }
-      certificateAgent.getCertificateAgent()
+      let signedDoc
       // CALL Yaipan API
       const constancia = await constancy.getConstancy({ id: input.idNumber })
+
       if (!constancia) {
         return { success: -1 }
       }
@@ -46,11 +47,10 @@ module.exports = {
         id: { _eq: input.idNumber }
       })
       const docHash = hash.generateHash(constancia)
-      console.log({ docHash })
+
       if (!data) {
         // CALL Sing BCCR
-        // digitalSignature.sign()
-
+        signedDoc = await digitalSignature.sign({constancia, docHash})
         await certificates.insert({ id: input.idNumber, email: input.email })
 
         // SEND EMAIL
@@ -59,7 +59,7 @@ module.exports = {
           to: input.email,
           subject: 'Certificado Municipal de propiedades',
           template: mailTemplate.generateConfirmation,
-          constancia
+          constancia: signedDoc.documento
         })
         return { success: 1 }
       }
@@ -68,7 +68,7 @@ module.exports = {
         new Date(data.updated_at).toDateString() !== new Date().toDateString()
       ) {
         // CALL Sing BCCR
-
+        signedDoc = await digitalSignature.sign({constancia, docHash})
         await certificates.update({
           where: {
             id: { _eq: input.idNumber }
@@ -83,7 +83,7 @@ module.exports = {
           return { success: 0 }
         else {
           // CALL Sing BCCR
-
+          signedDoc = await digitalSignature.sign({constancia, docHash})
           await certificates.update({
             where: {
               id: { _eq: input.idNumber }
@@ -102,11 +102,12 @@ module.exports = {
         to: input.email,
         subject: 'Certificado Municipal de propiedades',
         template: mailTemplate.generateConfirmation,
-        constancia
+        constancia: signedDoc.documento
       })
 
       return { success: 1 }
     } catch (error) {
+      console.log({error})
       throw Boom.badRequest(error.message, { code: 'BAD_REQUEST' })
     }
   },

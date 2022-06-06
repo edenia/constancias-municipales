@@ -1,5 +1,12 @@
 version: '3.6'
 services:
+  python:
+    build:
+     context: .
+    ports:
+    - 5000:5000
+    volumes:
+    - ./signatureService:/app
   postgres:
     container_name: 'boilerplate-postgres'
     image: postgres:13.3-alpine
@@ -34,6 +41,7 @@ services:
       HAPI_HASURA_ADMIN_SECRET: '${HAPI_HASURA_ADMIN_SECRET}'
       HAPI_CERTIFICATE_LIMIT: '${HAPI_CERTIFICATE_LIMIT}'
       HAPI_YAIPAN_ACCESS_TOKEN: '${HAPI_YAIPAN_ACCESS_TOKEN}'
+      HAPI_HASH_CREATOR_METHOD: '${HAPI_HASH_CREATOR_METHOD}'
       HAPI_YAIPAN_CONSTACIAS_API_ENDPOINT: '${HAPI_YAIPAN_CONSTACIAS_API_ENDPOINT}'
       HAPI_PUBLIC_RE_CAPTCHA_KEY: '${HAPI_PUBLIC_RE_CAPTCHA_KEY}'
       HAPI_RE_CAPTCHA_PROJECT_ID: '${HAPI_RE_CAPTCHA_PROJECT_ID}'
@@ -48,7 +56,9 @@ services:
       HAPI_TWITTER_LINK: '${HAPI_TWITTER_LINK}'
       HAPI_INSTAGRAM_LINK: '${HAPI_INSTAGRAM_LINK}'
       HAPI_YOUTUBE_LINK: '${HAPI_YOUTUBE_LINK}'
-      HAPI_URL_SERVICIO_SELLADOR: '${HAPI_URL_SERVICIO_SELLADOR}'
+      HAPI_LOCATION_SEALING_REQUEST: '${HAPI_LOCATION_SEALING_REQUEST}'
+      HAPI_REASON_SEALING_REQUEST: '${HAPI_REASON_SEALING_REQUEST}'
+      HAPI_DOC_SEALING_TYPE: '${HAPI_DOC_SEALING_TYPE}'
   hasura:
     container_name: 'boilerplate-hasura'
     image: hasura/graphql-engine:v2.0.4.cli-migrations-v3

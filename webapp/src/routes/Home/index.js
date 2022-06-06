@@ -210,7 +210,6 @@ const Home = () => {
                       display="grid"
                       textAlign="center"
                     >
-                      <Box margin="auto"></Box>
                       <BaseButton
                         variant="contained"
                         type="submit"

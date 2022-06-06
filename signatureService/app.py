@@ -1,5 +1,5 @@
 # save this as app.py
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from signer import sing
 
 app = Flask(__name__)
@@ -8,7 +8,7 @@ app = Flask(__name__)
 def server():
   return 'OK'
 
-@app.route("/signer", methods=['POST'])
+@app.route('/signer', methods=['POST'])
 def signer():
-  docSignerInfo = sing()
+  docSignerInfo = sing(request.json)
   return jsonify(docSignerInfo)

@@ -1,8 +1,8 @@
-const { createHash } = require('crypto')
+const crypto = require('crypto')
+const { bccrConfig } = require('../config')
 
 const generateHash = doc => {
-  const docString = JSON.stringify(doc)
-  return createHash('sha256').update(docString).digest('hex')
+  return crypto.createHash(bccrConfig.hashCreatorMethod).update(doc).digest('base64')
 }
 
 module.exports = {

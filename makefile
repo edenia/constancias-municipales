@@ -23,6 +23,11 @@ hapi:
 	@docker-compose up -d --build hapi
 	@echo "done hapi"
 
+# signatureService:
+# 	@docker-compose stop python
+# 	@docker-compose up -d --build python
+# 	@echo "done python"
+
 hapi-logs:
 	@docker-compose logs -f hapi
 

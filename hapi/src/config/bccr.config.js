@@ -1,3 +1,6 @@
 module.exports = {
-  urlServicioSellador: process.env.HAPI_URL_SERVICIO_SELLADOR
+  hashCreatorMethod: process.env.HAPI_HASH_CREATOR_METHOD,
+  locationSealingRequest: process.env.HAPI_LOCATION_SEALING_REQUEST,
+  reasonSealingRequest: process.env.HAPI_REASON_SEALING_REQUEST,
+  docSealingType: process.env.HAPI_DOC_SEALING_TYPE
 }
