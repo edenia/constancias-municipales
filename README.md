@@ -4,9 +4,9 @@
 
 ## Sobre el Proyecto
 
-_El generador de constancias municipales es una aplicación web que permite a los contribuyentes de las municipalidades obtener un documento digital donde podrá ver los pagos de los impuestos municipales de las propiedades con las que cuenta. Dicho documento es firmado digitalmente por la institución que emite dicho documento, lo que lo hace oficial y válido para utilizar en distintos trámites._
+_El generador de constancias municipales es una aplicación web que permite a los contribuyentes de las municipalidades obtener un documento digital en el que podrá ver los pagos de los impuestos municipales de las propiedades a su nombre. Este documento es firmado digitalmente por la institución que emite dicho documento, por lo que es oficial y válido para utilizar en distintas instituciones de Costa Rica._
 
-_Este proyecto es una iniciativa de Edenia, una empresa que desarrolla soluciones basadas en la web3. Esto con el apoyo y financiamiento de The Trust For The Americas._
+_Este proyecto es una iniciativa de [Edenia](https://edenia.com/es), una empresa que desarrolla soluciones web3 haciendo uso de tecnologías blockchain y otras de la industria 4.0. El proyecto cuenta con el apoyo y financiamiento de [The Trust For The Americas](https://www.trustfortheamericas.org/), una iniciativa de la [Organization of American States](https://www.oas.org/en/)._
 
 **Tabla de Contenidos**
 
@@ -25,7 +25,9 @@ _Este proyecto es una iniciativa de Edenia, una empresa que desarrolla solucione
 
 ## Propósito del Proyecto
 
-_Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum._
+_El objetivo de este proyecto es permitir a instituciones costarricenses, como municipalidades, acceder a una herramienta para emitir de forma rápida y segura constancias y otros documentos firmados digitalmente con la firma autorizada por el Banco Central de Costa Rica. Este esfuerzo ha sido realizado de forma open-source (código abierto) para que cualquier entidad pueda acceder al proceso._
+
+_El proyecto inició como iniciativa de la Municipalidad de Orotina para permitir a sus personas usuarias solicitar y recibir constancias digitales de impuestos de propiedades con la firma digital autorizada por el gobierno._
 
 ## Versión
 
@@ -194,6 +196,9 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds
     <img style={{ width: "50%" }} src="https://edenia.com/es/logos/edenia-general-logo.png" />
 </div>
 
-EOS Costa Rica es un productor independiente, autofinanciado y de bare-metal de Genesis que proporciona una infraestructura estable y segura para las cadenas de bloques EOSIO. Apoyamos el software de código abierto para nuestra comunidad al mismo tiempo que ofrecemos desarrollo de blockchain empresarial y desarrollo de contratos inteligentes personalizados para nuestros clientes.
+Edenia es una empresa que corre infraestructura blockchain independiente y desarrolla soluciones web3. Nuestro equipo de desarrolladores agnósticos a la tecnología ha estado operando desde 1987, impulsando las nuevas tecnologías para hacer la internet más segura, eficiente y transparente.
+
+Algunos de nuestros proyectos incluyen LACChain EOSIO, una red blockchain para América Latina apoyada por el BID Lab; Smart EIR, una plataforma para la industria de logística de contenedores; y el programa de afiliados de la red blockchain Proton.
+
 
 [edenia.com](https://edenia.com/es)

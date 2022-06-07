@@ -1,12 +1,26 @@
 version: '3.6'
 services:
-  python:
+  signature_service:
+    container_name: 'signature-service'
     build:
-     context: .
+      context: ./signatureService
     ports:
     - 5000:5000
     volumes:
     - ./signatureService:/app
+    environment:
+      FVA_HOST: 'http://bccr.fva.cr/'
+      STUB_SCHEME: 'https'
+      STUB_HOST: 'firmadorexterno.bccr.fi.cr'
+      RECEPTOR_HOST: 'http://bccr.fva.cr/'
+      DEFAULT_BUSSINESS: '1'
+      DEFAULT_ENTITY: '1'
+      RECEPTOR_CLIENT: 'pyfva.receptor.client'
+      REQUESTS_CA_BUNDLE: '/app/Certificados/ca_nacional_CR.pem'
+      REQUESTS_CA_PATH: '/app/Certificados/ca_nacional_CR.pem'
+      REQUESTS_CERT_PATH: '/app/Certificados/bccr_agent.pem'
+      REQUESTS_KEY_PATH: '/app/Certificados/bccr_agent_key.pem'
+      TZ: 'America/Costa_Rica'
   postgres:
     container_name: 'boilerplate-postgres'
     image: postgres:13.3-alpine

@@ -11,6 +11,7 @@ run:
 	make -B postgres
 	make -B hapi
 	make -B hasura
+	make -B signature-service
 	make -B -j 3 hapi-logs hasura-cli webapp
 
 postgres:
@@ -23,10 +24,10 @@ hapi:
 	@docker-compose up -d --build hapi
 	@echo "done hapi"
 
-# signatureService:
-# 	@docker-compose stop python
-# 	@docker-compose up -d --build python
-# 	@echo "done python"
+signature-service:
+	@docker-compose stop signature_service
+	@docker-compose up -d --build signature_service
+	@echo "done signature-service"
 
 hapi-logs:
 	@docker-compose logs -f hapi

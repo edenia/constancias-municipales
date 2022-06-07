@@ -30,6 +30,7 @@
     "jspdf": "^2.5.1",
     "node-gzip": "^1.1.2",
     "nodemailer": "^6.7.3",
+    "request": "^2.88.2",
     "request-promise": "^4.2.6"
   },
   "devDependencies": {
