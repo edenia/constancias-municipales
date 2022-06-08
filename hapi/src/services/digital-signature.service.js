@@ -16,7 +16,9 @@ const sign = async ({ constancia, docHash }) => {
         location: bccrConfig.locationSealingRequest,
         reason: bccrConfig.reasonSealingRequest,
         hashAlgorithm: upperCaseHashCreatorMethod,
-        docType: bccrConfig.docSealingType
+        docType: bccrConfig.docSealingType,
+        negocio: bccrConfig.negocio,
+        entidad: bccrConfig.entidad
       },
       json: true
     }

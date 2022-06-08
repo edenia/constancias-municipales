@@ -3,7 +3,7 @@ import warnings
 import os
 
 def sing(signatureData):
-  stampclient = ClienteSellador(negocio=2,entidad=1)
+  stampclient = ClienteSellador(negocio=signatureData['negocio'], entidad=signatureData['entidad'])
   if stampclient.validar_servicio():
     ARCH = signatureData['file']
     HASH =  signatureData['docHash']

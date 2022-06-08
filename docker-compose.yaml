@@ -72,6 +72,8 @@ services:
       HAPI_LOCATION_SEALING_REQUEST: '${HAPI_LOCATION_SEALING_REQUEST}'
       HAPI_REASON_SEALING_REQUEST: '${HAPI_REASON_SEALING_REQUEST}'
       HAPI_DOC_SEALING_TYPE: '${HAPI_DOC_SEALING_TYPE}'
+      HAPI_NEGOCIO: '${HAPI_NEGOCIO}'
+      HAPI_ENTIDAD: '${HAPI_ENTIDAD}'
   hasura:
     container_name: 'boilerplate-hasura'
     image: hasura/graphql-engine:v2.0.4.cli-migrations-v3
