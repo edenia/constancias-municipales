@@ -8,7 +8,6 @@ ENV TZ=America/Costa_Rica
 
 COPY . .
 
-COPY requirements.txt requirements.txt
 RUN pip3 install --trusted-host pypi.org --trusted-host files.pythonhosted.org -U Flask
 RUN pip3 install --trusted-host pypi.org --trusted-host files.pythonhosted.org pyfva
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ /etc/timezone

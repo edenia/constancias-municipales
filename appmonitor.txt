@@ -1,0 +1,73 @@
+make[1]: Entering directory '/home/edenia/constancias-municipales'
+hasura status 200
+hasura status 200
+yarn install v1.22.19
+[1/4] Resolving packages...
+time="2022-06-08T09:46:23-06:00" level=fatal msg="--database-name flag is required"
+failure!
+Attaching to boilerplate-hapi
+[36mboilerplate-hapi     |[0m yarn install v1.22.15
+[36mboilerplate-hapi     |[0m [1/4] Resolving packages...
+[36mboilerplate-hapi     |[0m success Already up-to-date.
+[36mboilerplate-hapi     |[0m Done in 1.70s.
+[36mboilerplate-hapi     |[0m yarn run v1.22.15
+[36mboilerplate-hapi     |[0m $ nodemon --enable-source-maps src/index.js
+[36mboilerplate-hapi     |[0m [33m[nodemon] 2.0.16[39m
+[36mboilerplate-hapi     |[0m [33m[nodemon] to restart at any time, enter `rs`[39m
+[36mboilerplate-hapi     |[0m [33m[nodemon] watching path(s): *.*[39m
+[36mboilerplate-hapi     |[0m [33m[nodemon] watching extensions: js,mjs,json[39m
+[36mboilerplate-hapi     |[0m [32m[nodemon] starting `node --enable-source-maps src/index.js`[39m
+[36mboilerplate-hapi     |[0m 🚀 Server ready at http://hapi:9090
+[36mboilerplate-hapi     |[0m get	/healthz
+[36mboilerplate-hapi     |[0m post	/generate-constancy
+[36mboilerplate-hapi     |[0m yarn install v1.22.15
+[36mboilerplate-hapi     |[0m [1/4] Resolving packages...
+[36mboilerplate-hapi     |[0m success Already up-to-date.
+[36mboilerplate-hapi     |[0m Done in 1.94s.
+[36mboilerplate-hapi     |[0m yarn run v1.22.15
+[36mboilerplate-hapi     |[0m $ nodemon --enable-source-maps src/index.js
+[36mboilerplate-hapi     |[0m [33m[nodemon] 2.0.16[39m
+[36mboilerplate-hapi     |[0m [33m[nodemon] to restart at any time, enter `rs`[39m
+[36mboilerplate-hapi     |[0m [33m[nodemon] watching path(s): *.*[39m
+[36mboilerplate-hapi     |[0m [33m[nodemon] watching extensions: js,mjs,json[39m
+[36mboilerplate-hapi     |[0m [32m[nodemon] starting `node --enable-source-maps src/index.js`[39m
+[36mboilerplate-hapi     |[0m 🚀 Server ready at http://hapi:9090
+[36mboilerplate-hapi     |[0m get	/healthz
+[36mboilerplate-hapi     |[0m post	/generate-constancy
+[36mboilerplate-hapi     |[0m yarn install v1.22.15
+[36mboilerplate-hapi     |[0m [1/4] Resolving packages...
+[36mboilerplate-hapi     |[0m success Already up-to-date.
+[36mboilerplate-hapi     |[0m Done in 2.00s.
+[36mboilerplate-hapi     |[0m yarn run v1.22.15
+[36mboilerplate-hapi     |[0m $ nodemon --enable-source-maps src/index.js
+[36mboilerplate-hapi     |[0m [33m[nodemon] 2.0.16[39m
+[36mboilerplate-hapi     |[0m [33m[nodemon] to restart at any time, enter `rs`[39m
+[36mboilerplate-hapi     |[0m [33m[nodemon] watching path(s): *.*[39m
+[36mboilerplate-hapi     |[0m [33m[nodemon] watching extensions: js,mjs,json[39m
+[36mboilerplate-hapi     |[0m [32m[nodemon] starting `node --enable-source-maps src/index.js`[39m
+[36mboilerplate-hapi     |[0m 🚀 Server ready at http://hapi:9090
+[36mboilerplate-hapi     |[0m get	/healthz
+[36mboilerplate-hapi     |[0m post	/generate-constancy
+{"level":"info","msg":"console running at: http://localhost:9695/","time":"2022-06-08T09:46:24-06:00"}
+{"error":"listen tcp 127.0.0.1:9693: bind: address already in use","level":"error","msg":"error listening on port 9693","time":"2022-06-08T09:46:24-06:00"}
+{"error":"listen tcp 127.0.0.1:9695: bind: address already in use","level":"error","msg":"error listening on port 9695","time":"2022-06-08T09:46:24-06:00"}
+success Already up-to-date.
+Done in 3.54s.
+yarn run v1.22.19
+$ env-cmd -f ../.env react-app-rewired start
+[34mℹ[39m [90m｢wds｣[39m: Project is running at http://172.16.24.36/
+[34mℹ[39m [90m｢wds｣[39m: webpack output is served from 
+[34mℹ[39m [90m｢wds｣[39m: Content not from webpack is served from /home/edenia/constancias-municipales/webapp/public
+[34mℹ[39m [90m｢wds｣[39m: 404s will fallback to /
+Starting the development server...
+
+Compiled successfully!
+
+You can now view constanciasmunicipales in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://172.16.24.36:3000
+
+Note that the development build is not optimized.
+To create a production build, use yarn build.
+

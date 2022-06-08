@@ -12,7 +12,8 @@ run:
 	make -B hapi
 	make -B hasura
 	make -B signature-service
-	make -B -j 3 hapi-logs hasura-cli webapp
+	# make -B -j 3 hapi-logs hasura-cli webapp
+	nohup make -B -j 3 hapi-logs hasura-cli webapp > appmonitor.txt &
 
 postgres:
 	@docker-compose stop postgres
