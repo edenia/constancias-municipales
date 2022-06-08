@@ -33,14 +33,16 @@ _El proyecto inició como iniciativa de la Municipalidad de Orotina para permiti
 
 `v0.0.1`
 
-:::note modificar
+---
+**NOTE**
+
 Lanzamos la versión del software de producción usando etiquetas github siguiendo a Semver.
 
 También usamos los mensajes de confirmación de git para generar el registro de cambios del proyecto.
 
 Con la version de comando yarn puede actualizar la versión de su paquete a través de la línea de comando.
-:::
 
+---
 ## Tecnologías
 
 - React.js - React 17✨, React Router 6
