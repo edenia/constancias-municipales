@@ -1,15 +1,13 @@
-make[1]: Entering directory '/home/edenia/constancias-municipales'
+make[1]: Entering directory '/home/angelo97/constancias-municipales'
 hasura status 200
 hasura status 200
-yarn install v1.22.19
+yarn install v1.22.4
 [1/4] Resolving packages...
-time="2022-06-08T10:15:27-06:00" level=fatal msg="--database-name flag is required"
-failure!
 Attaching to boilerplate-hapi
 [36mboilerplate-hapi     |[0m yarn install v1.22.15
 [36mboilerplate-hapi     |[0m [1/4] Resolving packages...
 [36mboilerplate-hapi     |[0m success Already up-to-date.
-[36mboilerplate-hapi     |[0m Done in 1.84s.
+[36mboilerplate-hapi     |[0m Done in 0.35s.
 [36mboilerplate-hapi     |[0m yarn run v1.22.15
 [36mboilerplate-hapi     |[0m $ nodemon --enable-source-maps src/index.js
 [36mboilerplate-hapi     |[0m [33m[nodemon] 2.0.16[39m
@@ -20,13 +18,33 @@ Attaching to boilerplate-hapi
 [36mboilerplate-hapi     |[0m 🚀 Server ready at http://hapi:9090
 [36mboilerplate-hapi     |[0m get	/healthz
 [36mboilerplate-hapi     |[0m post	/generate-constancy
-{"level":"info","msg":"console running at: http://localhost:9695/","time":"2022-06-08T10:15:30-06:00"}
-{"error":"listen tcp 127.0.0.1:9693: bind: address already in use","level":"error","msg":"error listening on port 9693","time":"2022-06-08T10:15:30-06:00"}
-{"error":"listen tcp 127.0.0.1:9695: bind: address already in use","level":"error","msg":"error listening on port 9695","time":"2022-06-08T10:15:30-06:00"}
+[36mboilerplate-hapi     |[0m yarn install v1.22.15
+[36mboilerplate-hapi     |[0m [1/4] Resolving packages...
+[36mboilerplate-hapi     |[0m success Already up-to-date.
+[36mboilerplate-hapi     |[0m Done in 0.38s.
+[36mboilerplate-hapi     |[0m yarn run v1.22.15
+[36mboilerplate-hapi     |[0m $ nodemon --enable-source-maps src/index.js
+[36mboilerplate-hapi     |[0m [33m[nodemon] 2.0.16[39m
+[36mboilerplate-hapi     |[0m [33m[nodemon] to restart at any time, enter `rs`[39m
+[36mboilerplate-hapi     |[0m [33m[nodemon] watching path(s): *.*[39m
+[36mboilerplate-hapi     |[0m [33m[nodemon] watching extensions: js,mjs,json[39m
+[36mboilerplate-hapi     |[0m [32m[nodemon] starting `node --enable-source-maps src/index.js`[39m
+[36mboilerplate-hapi     |[0m 🚀 Server ready at http://hapi:9090
+[36mboilerplate-hapi     |[0m get	/healthz
+[36mboilerplate-hapi     |[0m post	/generate-constancy
 success Already up-to-date.
-Done in 7.17s.
-yarn run v1.22.19
+Done in 0.66s.
+yarn run v1.22.4
 $ env-cmd -f ../.env react-app-rewired start
+time="2022-06-08T12:14:17-06:00" level=fatal msg="--database-name flag is required"
+failure!
+{"level":"info","msg":"console running at: http://localhost:9695/","time":"2022-06-08T12:14:18-06:00"}
+{"error":"listen tcp 127.0.0.1:9693: bind: address already in use","level":"error","msg":"error listening on port 9693","time":"2022-06-08T12:14:18-06:00"}
+{"error":"listen tcp 127.0.0.1:9695: bind: address already in use","level":"error","msg":"error listening on port 9695","time":"2022-06-08T12:14:18-06:00"}
 Something is already running on port 3000.
-Done in 12.60s.
+Done in 1.29s.
 done webapp
+[36mboilerplate-hapi exited with code 1
+[0mmake[1]: Leaving directory '/home/angelo97/constancias-municipales'
+make[1]: *** [makefile:54: hasura-cli] Killed
+make[1]: *** Waiting for unfinished jobs....

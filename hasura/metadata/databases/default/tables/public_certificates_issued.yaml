@@ -1,3 +1,34 @@
 table:
-  name: certificates_issued
   schema: public
+  name: certificates_issued
+insert_permissions:
+  - role: guest
+    permission:
+      check: {}
+      columns:
+        - id
+        - emitted_quantity
+        - created_at
+        - updated_at
+        - email
+      backend_only: false
+select_permissions:
+  - role: guest
+    permission:
+      columns:
+        - created_at
+        - email
+        - emitted_quantity
+        - id
+        - updated_at
+      filter: {}
+update_permissions:
+  - role: guest
+    permission:
+      columns:
+        - created_at
+        - email
+        - emitted_quantity
+        - updated_at
+      filter: {}
+      check: null
