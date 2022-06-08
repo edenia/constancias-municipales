@@ -6,6 +6,7 @@ services:
       context: ./signatureService
     ports:
     - 5000:5000
+    restart: always
     volumes:
     - ./signatureService:/app
     environment:
@@ -25,6 +26,7 @@ services:
     image: postgres:13.3-alpine
     ports:
       - '5432:5432'
+    restart: always
     volumes:
       - postgres_data:/var/lib/postgresql/data
     environment:
@@ -36,6 +38,7 @@ services:
     image: node:16.13.2-slim
     ports:
       - '9090:9090'
+    restart: always
     volumes:
       - ./tmp/hapi/node_modules/:/app/node_modules/
       - type: bind
@@ -81,6 +84,7 @@ services:
       - '8080:8080'
     depends_on:
       - postgres
+    restart: always
     volumes:
       - ./hasura/migrations:/migrations
       - ./hasura/metadata:/metadata
@@ -105,6 +109,7 @@ services:
     stdin_open: true
     ports:
       - '3000:3000'
+    restart: always
     volumes:
       - ./tmp/webapp/node_modules/:/app/node_modules/
       - type: bind
