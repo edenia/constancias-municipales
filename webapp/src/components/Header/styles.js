@@ -33,5 +33,8 @@ export default theme => ({
     [theme.breakpoints.up('md')]: {
       display: 'none'
     }
+  },
+  colorIcon: {
+    color: `${theme.palette.common.white} !important`
   }
 })

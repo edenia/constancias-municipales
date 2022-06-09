@@ -8,6 +8,7 @@ import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import AppBar from '@mui/material/AppBar'
 import IconButton from '@mui/material/IconButton'
+import { useMediaQuery } from '@mui/material'
 import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
@@ -28,10 +29,11 @@ const useStyles = makeStyles(styles)
 
 const SwitchThemeModeButton = memo(({ useDarkMode, onSwitch }) => {
   const { t } = useTranslation('header')
+  const smDown = useMediaQuery('(max-width:600px)')
 
   return (
     <Button
-      color="info"
+      color={useDarkMode ? 'info' : smDown ? 'primary' : 'info'}
       startIcon={useDarkMode ? <SunIcon /> : <MoonIcon />}
       onClick={() => onSwitch(!useDarkMode)}
     >
@@ -49,6 +51,8 @@ SwitchThemeModeButton.propTypes = {
 
 const LanguageButton = ({ current, onChange }) => {
   const [languageAnchorEl, setLanguageAnchorEl] = useState(null)
+  const smDown = useMediaQuery('(max-width:600px)')
+  const [state] = useSharedState()
   const languages = [
     {
       value: 'en',
@@ -72,7 +76,7 @@ const LanguageButton = ({ current, onChange }) => {
   return (
     <>
       <Button
-        color="info"
+        color={state.useDarkMode ? 'info' : smDown ? 'primary' : 'info'}
         startIcon={<LanguageIcon />}
         onClick={handleLanguajeMenuOpen}
       >
@@ -149,7 +153,11 @@ const Header = memo(({ onDrawerToggle }) => {
     <AppBar className={classes.appBar} position="sticky">
       <Toolbar className={classes.toolbar}>
         <Hidden mdUp>
-          <IconButton aria-label="Open drawer" onClick={onDrawerToggle}>
+          <IconButton
+            className={classes.colorIcon}
+            aria-label="Open drawer"
+            onClick={onDrawerToggle}
+          >
             <MenuIcon />
           </IconButton>
         </Hidden>
@@ -170,17 +178,18 @@ const Header = memo(({ onDrawerToggle }) => {
         </Box>
         <Box className={classes.mobileSection}>
           <IconButton
-            aria-label="show more"
             aria-haspopup="true"
+            aria-label="show more"
             onClick={handleOpenMenu}
+            className={classes.colorIcon}
           >
             <MoreIcon />
           </IconButton>
         </Box>
       </Toolbar>
       <Menu
-        anchorEl={menuAnchorEl}
         open={!!menuAnchorEl}
+        anchorEl={menuAnchorEl}
         onClose={handleCloseMenu}
       >
         <MenuItem>

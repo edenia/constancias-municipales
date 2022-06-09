@@ -1,37 +1,9 @@
 make[1]: Entering directory '/home/angelo97/constancias-municipales'
 hasura status 000
-[36mhasura |(B[m waiting for hasura service
 hasura status 000
 [36mwebapp |(B[m waiting for hasura service
+[36mhasura |(B[m waiting for hasura service
 Attaching to boilerplate-hapi
-[36mboilerplate-hapi     |[0m yarn install v1.22.15
-[36mboilerplate-hapi     |[0m [1/4] Resolving packages...
-[36mboilerplate-hapi     |[0m success Already up-to-date.
-[36mboilerplate-hapi     |[0m Done in 0.35s.
-[36mboilerplate-hapi     |[0m yarn run v1.22.15
-[36mboilerplate-hapi     |[0m $ nodemon --enable-source-maps src/index.js
-[36mboilerplate-hapi     |[0m [33m[nodemon] 2.0.16[39m
-[36mboilerplate-hapi     |[0m [33m[nodemon] to restart at any time, enter `rs`[39m
-[36mboilerplate-hapi     |[0m [33m[nodemon] watching path(s): *.*[39m
-[36mboilerplate-hapi     |[0m [33m[nodemon] watching extensions: js,mjs,json[39m
-[36mboilerplate-hapi     |[0m [32m[nodemon] starting `node --enable-source-maps src/index.js`[39m
-[36mboilerplate-hapi     |[0m 🚀 Server ready at http://hapi:9090
-[36mboilerplate-hapi     |[0m get	/healthz
-[36mboilerplate-hapi     |[0m post	/generate-constancy
-[36mboilerplate-hapi     |[0m yarn install v1.22.15
-[36mboilerplate-hapi     |[0m [1/4] Resolving packages...
-[36mboilerplate-hapi     |[0m success Already up-to-date.
-[36mboilerplate-hapi     |[0m Done in 0.57s.
-[36mboilerplate-hapi     |[0m yarn run v1.22.15
-[36mboilerplate-hapi     |[0m $ nodemon --enable-source-maps src/index.js
-[36mboilerplate-hapi     |[0m [33m[nodemon] 2.0.16[39m
-[36mboilerplate-hapi     |[0m [33m[nodemon] to restart at any time, enter `rs`[39m
-[36mboilerplate-hapi     |[0m [33m[nodemon] watching path(s): *.*[39m
-[36mboilerplate-hapi     |[0m [33m[nodemon] watching extensions: js,mjs,json[39m
-[36mboilerplate-hapi     |[0m [32m[nodemon] starting `node --enable-source-maps src/index.js`[39m
-[36mboilerplate-hapi     |[0m 🚀 Server ready at http://hapi:9090
-[36mboilerplate-hapi     |[0m get	/healthz
-[36mboilerplate-hapi     |[0m post	/generate-constancy
 [36mboilerplate-hapi     |[0m yarn install v1.22.15
 [36mboilerplate-hapi     |[0m [1/4] Resolving packages...
 [36mboilerplate-hapi     |[0m success Already up-to-date.
@@ -46,103 +18,77 @@ Attaching to boilerplate-hapi
 [36mboilerplate-hapi     |[0m 🚀 Server ready at http://hapi:9090
 [36mboilerplate-hapi     |[0m get	/healthz
 [36mboilerplate-hapi     |[0m post	/generate-constancy
-[36mboilerplate-hapi     |[0m yarn install v1.22.15
-[36mboilerplate-hapi     |[0m [1/4] Resolving packages...
-[36mboilerplate-hapi     |[0m success Already up-to-date.
-[36mboilerplate-hapi     |[0m Done in 0.39s.
-[36mboilerplate-hapi     |[0m yarn run v1.22.15
-[36mboilerplate-hapi     |[0m $ nodemon --enable-source-maps src/index.js
-[36mboilerplate-hapi     |[0m [33m[nodemon] 2.0.16[39m
-[36mboilerplate-hapi     |[0m [33m[nodemon] to restart at any time, enter `rs`[39m
-[36mboilerplate-hapi     |[0m [33m[nodemon] watching path(s): *.*[39m
-[36mboilerplate-hapi     |[0m [33m[nodemon] watching extensions: js,mjs,json[39m
-[36mboilerplate-hapi     |[0m [32m[nodemon] starting `node --enable-source-maps src/index.js`[39m
-[36mboilerplate-hapi     |[0m 🚀 Server ready at http://hapi:9090
-[36mboilerplate-hapi     |[0m get	/healthz
-[36mboilerplate-hapi     |[0m post	/generate-constancy
-[36mboilerplate-hapi     |[0m yarn install v1.22.15
-[36mboilerplate-hapi     |[0m [1/4] Resolving packages...
-[36mboilerplate-hapi     |[0m success Already up-to-date.
-[36mboilerplate-hapi     |[0m Done in 0.35s.
-[36mboilerplate-hapi     |[0m yarn run v1.22.15
-[36mboilerplate-hapi     |[0m $ nodemon --enable-source-maps src/index.js
-[36mboilerplate-hapi     |[0m [33m[nodemon] 2.0.16[39m
-[36mboilerplate-hapi     |[0m [33m[nodemon] to restart at any time, enter `rs`[39m
-[36mboilerplate-hapi     |[0m [33m[nodemon] watching path(s): *.*[39m
-[36mboilerplate-hapi     |[0m [33m[nodemon] watching extensions: js,mjs,json[39m
-[36mboilerplate-hapi     |[0m [32m[nodemon] starting `node --enable-source-maps src/index.js`[39m
-[36mboilerplate-hapi     |[0m 🚀 Server ready at http://hapi:9090
-[36mboilerplate-hapi     |[0m get	/healthz
-[36mboilerplate-hapi     |[0m post	/generate-constancy
-[36mboilerplate-hapi     |[0m yarn install v1.22.15
-[36mboilerplate-hapi     |[0m [1/4] Resolving packages...
-[36mboilerplate-hapi     |[0m success Already up-to-date.
-[36mboilerplate-hapi     |[0m Done in 0.42s.
-[36mboilerplate-hapi     |[0m yarn run v1.22.15
-[36mboilerplate-hapi     |[0m $ nodemon --enable-source-maps src/index.js
-[36mboilerplate-hapi     |[0m [33m[nodemon] 2.0.16[39m
-[36mboilerplate-hapi     |[0m [33m[nodemon] to restart at any time, enter `rs`[39m
-[36mboilerplate-hapi     |[0m [33m[nodemon] watching path(s): *.*[39m
-[36mboilerplate-hapi     |[0m [33m[nodemon] watching extensions: js,mjs,json[39m
-[36mboilerplate-hapi     |[0m [32m[nodemon] starting `node --enable-source-maps src/index.js`[39m
-[36mboilerplate-hapi     |[0m 🚀 Server ready at http://hapi:9090
-[36mboilerplate-hapi     |[0m get	/healthz
-[36mboilerplate-hapi     |[0m post	/generate-constancy
-[36mboilerplate-hapi     |[0m yarn install v1.22.15
-[36mboilerplate-hapi     |[0m [1/4] Resolving packages...
-[36mboilerplate-hapi     |[0m success Already up-to-date.
-[36mboilerplate-hapi     |[0m Done in 0.35s.
-[36mboilerplate-hapi     |[0m yarn run v1.22.15
-[36mboilerplate-hapi     |[0m $ nodemon --enable-source-maps src/index.js
-[36mboilerplate-hapi     |[0m [33m[nodemon] 2.0.16[39m
-[36mboilerplate-hapi     |[0m [33m[nodemon] to restart at any time, enter `rs`[39m
-[36mboilerplate-hapi     |[0m [33m[nodemon] watching path(s): *.*[39m
-[36mboilerplate-hapi     |[0m [33m[nodemon] watching extensions: js,mjs,json[39m
-[36mboilerplate-hapi     |[0m [32m[nodemon] starting `node --enable-source-maps src/index.js`[39m
-[36mboilerplate-hapi     |[0m 🚀 Server ready at http://hapi:9090
-[36mboilerplate-hapi     |[0m get	/healthz
-[36mboilerplate-hapi     |[0m post	/generate-constancy
-[36mboilerplate-hapi     |[0m yarn install v1.22.15
-[36mboilerplate-hapi     |[0m [1/4] Resolving packages...
-[36mboilerplate-hapi     |[0m success Already up-to-date.
-[36mboilerplate-hapi     |[0m Done in 0.33s.
-[36mboilerplate-hapi     |[0m yarn run v1.22.15
-[36mboilerplate-hapi     |[0m $ nodemon --enable-source-maps src/index.js
-[36mboilerplate-hapi     |[0m [33m[nodemon] 2.0.16[39m
-[36mboilerplate-hapi     |[0m [33m[nodemon] to restart at any time, enter `rs`[39m
-[36mboilerplate-hapi     |[0m [33m[nodemon] watching path(s): *.*[39m
-[36mboilerplate-hapi     |[0m [33m[nodemon] watching extensions: js,mjs,json[39m
-[36mboilerplate-hapi     |[0m [32m[nodemon] starting `node --enable-source-maps src/index.js`[39m
-[36mboilerplate-hapi     |[0m 🚀 Server ready at http://hapi:9090
-[36mboilerplate-hapi     |[0m get	/healthz
-[36mboilerplate-hapi     |[0m post	/generate-constancy
-[36mboilerplate-hapi     |[0m yarn install v1.22.15
-[36mboilerplate-hapi     |[0m [1/4] Resolving packages...
-[36mboilerplate-hapi     |[0m success Already up-to-date.
-[36mboilerplate-hapi     |[0m Done in 0.37s.
-[36mboilerplate-hapi     |[0m yarn run v1.22.15
-[36mboilerplate-hapi     |[0m $ nodemon --enable-source-maps src/index.js
-[36mboilerplate-hapi     |[0m [33m[nodemon] 2.0.16[39m
-[36mboilerplate-hapi     |[0m [33m[nodemon] to restart at any time, enter `rs`[39m
-[36mboilerplate-hapi     |[0m [33m[nodemon] watching path(s): *.*[39m
-[36mboilerplate-hapi     |[0m [33m[nodemon] watching extensions: js,mjs,json[39m
-[36mboilerplate-hapi     |[0m [32m[nodemon] starting `node --enable-source-maps src/index.js`[39m
-[36mboilerplate-hapi     |[0m 🚀 Server ready at http://hapi:9090
-[36mboilerplate-hapi     |[0m get	/healthz
-[36mboilerplate-hapi     |[0m post	/generate-constancy
 hasura status 200
 hasura status 200
 yarn install v1.22.4
 [1/4] Resolving packages...
+time="2022-06-09T12:03:10-06:00" level=fatal msg="--database-name flag is required"
+failure!
 success Already up-to-date.
-Done in 0.62s.
+Done in 0.74s.
+{"level":"info","msg":"console running at: http://localhost:9695/","time":"2022-06-09T12:03:11-06:00"}
 yarn run v1.22.4
 $ env-cmd -f ../.env react-app-rewired start
-time="2022-06-08T14:03:06-06:00" level=fatal msg="--database-name flag is required"
-failure!
-{"level":"info","msg":"console running at: http://localhost:9695/","time":"2022-06-08T14:03:06-06:00"}
-Something is already running on port 3000.
-Done in 1.21s.
-done webapp
-[36mboilerplate-hapi exited with code 1
-[0m
+[34mℹ[39m [90m｢wds｣[39m: Project is running at http://172.28.235.94/
+[34mℹ[39m [90m｢wds｣[39m: webpack output is served from 
+[34mℹ[39m [90m｢wds｣[39m: Content not from webpack is served from /home/angelo97/constancias-municipales/webapp/public
+[34mℹ[39m [90m｢wds｣[39m: 404s will fallback to /
+Starting the development server...
+
+Compiled successfully!
+
+You can now view constanciasmunicipales in the browser.
+
+  Local:            http://localhost:3000
+  On Your Network:  http://172.28.235.94:3000
+
+Note that the development build is not optimized.
+To create a production build, use yarn build.
+
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "urllib3/connectionpool.py", line 677, in urlopen
+  File "urllib3/connectionpool.py", line 392, in _make_request
+  File "http/client.py", line 1252, in request
+  File "http/client.py", line 1298, in _send_request
+  File "http/client.py", line 1247, in endheaders
+  File "http/client.py", line 1026, in _send_output
+  File "http/client.py", line 966, in send
+  File "docker/transport/unixconn.py", line 43, in connect
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "requests/adapters.py", line 449, in send
+  File "urllib3/connectionpool.py", line 727, in urlopen
+  File "urllib3/util/retry.py", line 403, in increment
+  File "urllib3/packages/six.py", line 734, in reraise
+  File "urllib3/connectionpool.py", line 677, in urlopen
+  File "urllib3/connectionpool.py", line 392, in _make_request
+  File "http/client.py", line 1252, in request
+  File "http/client.py", line 1298, in _send_request
+  File "http/client.py", line 1247, in endheaders
+  File "http/client.py", line 1026, in _send_output
+  File "http/client.py", line 966, in send
+  File "docker/transport/unixconn.py", line 43, in connect
+urllib3.exceptions.ProtocolError: ('Connection aborted.', ConnectionRefusedError(111, 'Connection refused'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "threading.py", line 926, in _bootstrap_inner
+  File "threading.py", line 870, in run
+  File "compose/cli/log_printer.py", line 166, in tail_container_logs
+  File "compose/cli/log_printer.py", line 197, in wait_on_exit
+  File "compose/container.py", line 277, in wait
+  File "docker/utils/decorators.py", line 19, in wrapped
+  File "docker/api/container.py", line 1302, in wait
+  File "docker/utils/decorators.py", line 46, in inner
+  File "docker/api/client.py", line 224, in _post
+  File "requests/sessions.py", line 578, in post
+  File "requests/sessions.py", line 530, in request
+  File "requests/sessions.py", line 643, in send
+  File "requests/adapters.py", line 498, in send
+requests.exceptions.ConnectionError: ('Connection aborted.', ConnectionRefusedError(111, 'Connection refused'))
+

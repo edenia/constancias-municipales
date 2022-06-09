@@ -16,7 +16,13 @@ const Thanks = () => {
       <Box zIndex={0} position="absolute" width="100%">
         <img
           width="100%"
-          height={typeof window !== 'undefined' ? window.innerHeight - 120 : 0}
+          height={
+            typeof window !== 'undefined'
+              ? smDown
+                ? window.innerHeight
+                : window.innerHeight - 120
+              : 0
+          }
           src="images/thanks-bg-image.png"
           alt="Header"
         />
@@ -32,7 +38,10 @@ const Thanks = () => {
           <Box margin="auto" textAlign="center">
             <Grid container justifyContent="center">
               <Grid item md={10}>
-                <img src="icons/check-icon.png" />
+                <img
+                  width={smDown ? '50%' : '100%'}
+                  src="icons/check-icon.png"
+                />
                 <Box pt={4}>
                   <Typography variant="h5">
                     {t('thanksMessageTitle')}

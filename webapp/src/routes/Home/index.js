@@ -26,6 +26,8 @@ const Home = () => {
   const [, { showMessage }] = useSharedState()
   const { executeRecaptcha } = useGoogleReCaptcha()
   const smDown = useMediaQuery(theme.breakpoints.down('sm'))
+  const smUp = useMediaQuery(theme.breakpoints.up('sm'))
+  const mdDown = useMediaQuery(theme.breakpoints.down('md'))
   const [showProgressBar, setShowProgressBar] = useState(false)
 
   const [generateConstancy, { error: errorGenerateConstancy }] = useMutation(
@@ -155,7 +157,7 @@ const Home = () => {
                     </Box>
                   </Grid>
                   <Grid item xs={12} md={5}>
-                    <Box pr={smDown ? 0 : 6}>
+                    <Box pr={smDown ? 0 : 6} pl={mdDown && smUp ? 6 : 0}>
                       <Box pt={10}>
                         <Typography color="common.white" variant="subtitle1">
                           {t('email')}
