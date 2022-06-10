@@ -39,7 +39,7 @@ const Thanks = () => {
             <Grid container justifyContent="center">
               <Grid item md={10}>
                 <img
-                  width={smDown ? '50%' : '100%'}
+                  width={smDown ? '50%' : '30%'}
                   src="icons/check-icon.png"
                 />
                 <Box pt={4}>
