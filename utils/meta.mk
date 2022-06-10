@@ -3,9 +3,9 @@
 VERSION ?= $(shell git rev-parse --short HEAD)
 CURRENT_BRANCH ?= $(shell git rev-parse --abbrev-ref HEAD)
 
-IMAGE_NAME_WEBAPP=boilerplate-webapp
-IMAGE_NAME_HAPI=boilerplate-hapi
-IMAGE_NAME_HASURA=boilerplate-hasura
+IMAGE_NAME_WEBAPP=constancias-webapp
+IMAGE_NAME_HAPI=constancias-hapi
+IMAGE_NAME_HASURA=constancias-hasura
 
 DOCKER_REGISTRY=eoscostarica506
 SUBDIRS = webapp hapi hasura

@@ -1,8 +1,8 @@
 {
-  "name": "EOSIO Boilerplate",
-  "short_name": "Boilerplate",
+  "name": "Constancias Municipales",
+  "short_name": "Constancias Municipales",
   "lang": "en",
-  "description": "Basic skeleton for EOS Costa Rica projects",
+  "description": "Generador Constancias Municipales",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

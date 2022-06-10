@@ -9,12 +9,12 @@
     "copy": "All rights reserved. Produced by"
   },
   "routes": {
-    "/>title": "EOSIO Boilerplate",
+    "/>title": "Constancias Municipales",
     "/>sidebar": "Home",
-    "/about>title": "About | EOSIO Boilerplate",
+    "/about>title": "About | Constancias Municipales",
     "/about>sidebar": "About",
     "/about>heading": "About",
-    "/help>title": "Help | EOSIO Boilerplate",
+    "/help>title": "Help | Constancias Municipales",
     "/help>sidebar": "Help",
     "/help>heading": "Help",
     "docs": "Docs",

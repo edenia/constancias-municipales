@@ -1,7 +1,7 @@
 version: '3.6'
 services:
   signature_service:
-    container_name: 'signature-service'
+    container_name: 'constancias-signature-service'
     build:
       context: ./signatureService
     ports:
@@ -22,7 +22,7 @@ services:
       REQUESTS_CERT_PATH: '${REQUESTS_CERT_PATH}'
       REQUESTS_KEY_PATH: '${REQUESTS_KEY_PATH}'
   postgres:
-    container_name: 'boilerplate-postgres'
+    container_name: 'constancias-postgres'
     image: postgres:13.3-alpine
     ports:
       - '5432:5432'
@@ -34,7 +34,7 @@ services:
       POSTGRES_PASSWORD: '${POSTGRES_PASSWORD}'
       POSTGRES_DB: '${POSTGRES_DB}'
   hapi:
-    container_name: 'boilerplate-hapi'
+    container_name: 'constancias-hapi'
     image: node:16.13.2-slim
     ports:
       - '9090:9090'
@@ -78,7 +78,7 @@ services:
       HAPI_NEGOCIO: '${HAPI_NEGOCIO}'
       HAPI_ENTIDAD: '${HAPI_ENTIDAD}'
   hasura:
-    container_name: 'boilerplate-hasura'
+    container_name: 'constancias-hasura'
     image: hasura/graphql-engine:v2.0.4.cli-migrations-v3
     ports:
       - '8080:8080'
@@ -104,7 +104,7 @@ services:
       HASURA_GRAPHQL_ADMIN_SECRET: "${HASURA_GRAPHQL_ADMIN_SECRET}"
       HASURA_GRAPHQL_UNAUTHORIZED_ROLE: "${HASURA_GRAPHQL_UNAUTHORIZED_ROLE}"
   webapp:
-    container_name: 'boilerplate-webapp'
+    container_name: 'constancias-webapp'
     image: node:16.14.0-stretch
     stdin_open: true
     ports:
