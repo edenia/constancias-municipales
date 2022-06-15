@@ -64,7 +64,7 @@ Se crea a partir de la rama main, nuestra rama de producción, en caso de querer
 - Moverse al directorio apropiado: `cd constancias-municipales`
 - Crear el archivo con las variables de ambiente: `cp .env.example .env`
 - Correr `yarn` para instalar dependencias.
-- Correr `make run` esto para levantar el proyecto, el caul se encuentra en http://localhost:3000
+- Correr `make run` esto para levantar el proyecto, el cual se encuentra en http://localhost:3000
 
 #### **Prerrequisitos**
 
