@@ -4,5 +4,6 @@ module.exports = {
   reasonSealingRequest: process.env.HAPI_REASON_SEALING_REQUEST,
   docSealingType: process.env.HAPI_DOC_SEALING_TYPE,
   negocio: process.env.HAPI_NEGOCIO,
-  entidad: process.env.HAPI_ENTIDAD
+  entidad: process.env.HAPI_ENTIDAD,
+  signerUrl: process.env.HAPI_SIGNER_URL
 }

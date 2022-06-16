@@ -9,7 +9,7 @@ const sign = async ({ constancia, docHash }) => {
   try {
     const options = {
       method: 'POST',
-      uri: 'http://172.16.24.36:5000/signer',
+      uri: `${bccrConfig.signerUrl}:5000/signer`,
       body: {
         file: Buffer.from(constancia).toString('base64'),
         docHash,

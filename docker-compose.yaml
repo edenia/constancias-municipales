@@ -77,6 +77,7 @@ services:
       HAPI_DOC_SEALING_TYPE: '${HAPI_DOC_SEALING_TYPE}'
       HAPI_NEGOCIO: '${HAPI_NEGOCIO}'
       HAPI_ENTIDAD: '${HAPI_ENTIDAD}'
+      HAPI_SIGNER_URL: '${HAPI_SIGNER_URL}'
   hasura:
     container_name: 'constancias-hasura'
     image: hasura/graphql-engine:v2.0.4.cli-migrations-v3
