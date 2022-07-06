@@ -1,22 +1,18 @@
 import React, { memo, useEffect, useState } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
 import { makeStyles } from '@mui/styles'
 import PropTypes from 'prop-types'
 import { useTranslation } from 'react-i18next'
-import { useLocation } from 'react-router-dom'
-import Hidden from '@mui/material/Hidden'
 import Menu from '@mui/material/Menu'
 import MenuItem from '@mui/material/MenuItem'
 import AppBar from '@mui/material/AppBar'
-import IconButton from '@mui/material/IconButton'
 import { useMediaQuery } from '@mui/material'
 import Button from '@mui/material/Button'
 import Box from '@mui/material/Box'
 import Toolbar from '@mui/material/Toolbar'
 import Typography from '@mui/material/Typography'
-import MenuIcon from '@mui/icons-material/Menu'
 import LanguageIcon from '@mui/icons-material/Language'
 import AccountIcon from '@mui/icons-material/AccountCircle'
-import MoreIcon from '@mui/icons-material/MoreVert'
 import { Sun as SunIcon, Moon as MoonIcon } from 'react-feather'
 
 import { useSharedState } from '../../context/state.context'
@@ -51,8 +47,6 @@ SwitchThemeModeButton.propTypes = {
 
 const LanguageButton = ({ current, onChange }) => {
   const [languageAnchorEl, setLanguageAnchorEl] = useState(null)
-  const smDown = useMediaQuery('(max-width:600px)')
-  const [state] = useSharedState()
   const languages = [
     {
       value: 'en',
@@ -76,7 +70,7 @@ const LanguageButton = ({ current, onChange }) => {
   return (
     <>
       <Button
-        color={state.useDarkMode ? 'info' : smDown ? 'primary' : 'info'}
+        color="info"
         startIcon={<LanguageIcon />}
         onClick={handleLanguajeMenuOpen}
       >
@@ -124,22 +118,15 @@ UserButton.propTypes = {
 
 const Header = memo(({ onDrawerToggle }) => {
   const classes = useStyles()
+  const navigate = useNavigate()
   const { t } = useTranslation('routes')
   const location = useLocation()
-  const [state, { setState }] = useSharedState()
+  const [state] = useSharedState()
   const { i18n } = useTranslation('translations')
   const [currentLanguaje, setCurrentLanguaje] = useState()
   const [menuAnchorEl, setMenuAnchorEl] = useState()
 
-  const handleSwitchThemeMode = useDarkMode => {
-    setState({ useDarkMode })
-  }
-
   const handleChangeLanguage = languaje => i18n.changeLanguage(languaje)
-
-  const handleOpenMenu = event => {
-    setMenuAnchorEl(event.currentTarget)
-  }
 
   const handleCloseMenu = () => {
     setMenuAnchorEl(null)
@@ -152,39 +139,24 @@ const Header = memo(({ onDrawerToggle }) => {
   return (
     <AppBar className={classes.appBar} position="sticky">
       <Toolbar className={classes.toolbar}>
-        <Hidden mdUp>
-          <IconButton
-            className={classes.colorIcon}
-            aria-label="Open drawer"
-            onClick={onDrawerToggle}
-          >
-            <MenuIcon />
-          </IconButton>
-        </Hidden>
+        <Box className={classes.showCursos}>
+          <img
+            width="100%"
+            alt={mainConfig.title}
+            src={mainConfig.logo}
+            onClick={() => navigate('/')}
+          />
+        </Box>
         <Typography className={classes.typography} variant="h4">
           {t(`${location.pathname}>heading`, '')}
         </Typography>
         <PageTitle title={t(`${location.pathname}>title`, mainConfig.title)} />
         <Box className={classes.desktopSection}>
-          <SwitchThemeModeButton
-            useDarkMode={state.useDarkMode}
-            onSwitch={handleSwitchThemeMode}
-          />
           <LanguageButton
             current={currentLanguaje}
             onChange={handleChangeLanguage}
           />
           <UserButton user={state.user} />
-        </Box>
-        <Box className={classes.mobileSection}>
-          <IconButton
-            aria-haspopup="true"
-            aria-label="show more"
-            onClick={handleOpenMenu}
-            className={classes.colorIcon}
-          >
-            <MoreIcon />
-          </IconButton>
         </Box>
       </Toolbar>
       <Menu
@@ -192,12 +164,6 @@ const Header = memo(({ onDrawerToggle }) => {
         anchorEl={menuAnchorEl}
         onClose={handleCloseMenu}
       >
-        <MenuItem>
-          <SwitchThemeModeButton
-            useDarkMode={state.useDarkMode}
-            onSwitch={handleSwitchThemeMode}
-          />
-        </MenuItem>
         <MenuItem>
           <LanguageButton
             current={currentLanguaje}

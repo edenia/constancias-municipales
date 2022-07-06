@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
-import Hidden from '@mui/material/Hidden'
 import Box from '@mui/material/Box'
 import { makeStyles } from '@mui/styles'
 
-import Sidebar from '../../components/Sidebar'
 import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import Message from '../../components/Message'
@@ -24,24 +22,6 @@ const Dashboard = ({ children, routes }) => {
 
   return (
     <Box className={classes.root}>
-      <Box className={classes.drawer}>
-        <Hidden lgUp implementation="js">
-          <Sidebar
-            PaperProps={{ style: { width: drawerWidth } }}
-            variant="temporary"
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-            routes={routes}
-          />
-        </Hidden>
-        <Hidden mdDown implementation="css">
-          <Sidebar
-            PaperProps={{ style: { width: drawerWidth } }}
-            variant="permanent"
-            routes={routes}
-          />
-        </Hidden>
-      </Box>
       <Box className={classes.mainContent}>
         <Header onDrawerToggle={handleDrawerToggle} />
         <Box className={classes.childContent}>{children}</Box>

@@ -23,10 +23,9 @@ BaseButton.propTypes = {
 
 const useStyles = makeStyles(theme => ({
   button: {
-    borderRadius: 4,
-    padding: theme.spacing(1, 3),
-    fontSize: '16px',
-    fontWeight: 'bold'
+    borderRadius: `48px !important`,
+    padding: `${theme.spacing(1, 5)} !important`,
+    fontSize: '14px !important'
   }
 }))
 

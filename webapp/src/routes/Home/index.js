@@ -4,30 +4,35 @@ import {
   Grid,
   Link,
   Typography,
-  CircularProgress,
-  useMediaQuery
+  useMediaQuery,
+  CircularProgress
 } from '@mui/material'
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
 import { useTranslation } from 'react-i18next'
 import { Formik, Form, Field } from 'formik'
 import { useMutation } from '@apollo/client'
-import { useTheme } from '@mui/styles'
+import { makeStyles, useTheme } from '@mui/styles'
 
 import { useSharedState } from '../../context/state.context'
 import { BaseTextField, BaseButton } from '../../components'
 import { MUTATION_GENERATE_CONSTANCY } from '../../gql'
 import { requestProofSchema } from '../../schemas'
 
+import styles from './styles'
+
+const useStyles = makeStyles(styles)
+
 const { defaultValues, schema } = requestProofSchema
 
 const Home = () => {
   const theme = useTheme()
+  const classes = useStyles()
   const { t } = useTranslation('homeRoute')
   const [, { showMessage }] = useSharedState()
   const { executeRecaptcha } = useGoogleReCaptcha()
   const smDown = useMediaQuery(theme.breakpoints.down('sm'))
-  const smUp = useMediaQuery(theme.breakpoints.up('sm'))
-  const mdDown = useMediaQuery(theme.breakpoints.down('md'))
+  // const smUp = useMediaQuery(theme.breakpoints.up('sm'))
+  // const mdDown = useMediaQuery(theme.breakpoints.down('md'))
   const [showProgressBar, setShowProgressBar] = useState(false)
 
   const [generateConstancy, { error: errorGenerateConstancy }] = useMutation(
@@ -56,35 +61,118 @@ const Home = () => {
   }, [errorGenerateConstancy])
 
   return (
-    <Grid container>
-      <Grid item md={12}>
-        <Box paddingX={smDown ? 3 : 6}>
-          <Box mt={6} mb={3}>
-            <img width={140} src="icons/paper-icon.png" />
+    <Grid container className={classes.gridHeight}>
+      <Grid item xs={12} md={7} className={classes.gridHeight}>
+        <Box
+          borderRight={smDown ? 0 : `3px solid ${theme.palette.secondary.main}`}
+          borderBottom={
+            smDown ? `3px solid ${theme.palette.secondary.main}` : 0
+          }
+          bgcolor="common.white"
+          height="100%"
+        >
+          <Box
+            paddingY={smDown ? 3 : 4}
+            paddingX={smDown ? 2 : 3}
+            className={classes.boxHeaderStyle}
+            bgcolor={theme.extraColors.secondaryVariantOpacity}
+          >
+            <Typography
+              textTransform="uppercase"
+              fontWeight="bold"
+              variant="h4"
+              align={smDown ? 'center' : 'left'}
+            >
+              {t('municipalRecordsManager')}
+            </Typography>
           </Box>
-          <Box mb={1}>
-            <Typography variant="h4">{t('municipalRecordsManager')}</Typography>
-          </Box>
-          <img width="50%" src="icons/line-icon.png" />
-          <Typography variant="h6" component="div">
-            <Box pt={6} width="50%" fontWeight="bold">
-              {t('subtitle')}
+          <Box
+            paddingX={smDown ? 2 : 3}
+            pt={smDown ? 3 : 5}
+            pb={smDown ? 8 : 10}
+          >
+            <Typography
+              variant="h6"
+              align={smDown ? 'center' : 'left'}
+              component="div"
+            >
+              <Box fontWeight="bold">{t('subtitle')}</Box>
+            </Typography>
+            <Box
+              pt={3}
+              display={smDown ? 'block' : 'flex'}
+              justifyContent="space-around"
+            >
+              <Box
+                borderRadius={2}
+                border={`2px solid ${theme.palette.secondary.main}`}
+                bgcolor="common.white"
+                boxShadow={`0 3px 6px 0 ${theme.extraColors.shadowColor}`}
+                paddingY={4}
+                width="220px"
+                alignItems="center"
+                display="flex"
+                justifyContent="center"
+                margin={smDown ? 'auto' : 'none'}
+              >
+                <Typography align="center" variant="body1">
+                  {t('firstBulletPoint')}
+                </Typography>
+              </Box>
+              <Box
+                borderRadius={2}
+                border={`2px solid ${theme.palette.secondary.main}`}
+                bgcolor="common.white"
+                paddingY={4}
+                paddingX={2}
+                boxShadow={`0 3px 6px 0 ${theme.extraColors.shadowColor}`}
+                width="220px"
+                alignItems="center"
+                display="flex"
+                justifyContent="center"
+                margin={smDown ? 'auto' : 'none'}
+                mt={smDown ? 5 : 0}
+              >
+                <Typography align="center" variant="body1">
+                  {t('secondBulletPoint')}
+                </Typography>
+              </Box>
+              <Box
+                borderRadius={2}
+                border={`2px solid ${theme.palette.secondary.main}`}
+                bgcolor="common.white"
+                paddingY={4}
+                width="220px"
+                boxShadow={`0 3px 6px 0 ${theme.extraColors.shadowColor}`}
+                alignItems="center"
+                display="flex"
+                justifyContent="center"
+                margin={smDown ? 'auto' : 'none'}
+                mt={smDown ? 5 : 0}
+              >
+                <Typography align="center" variant="body1">
+                  {t('thirdBulletPoint')}
+                </Typography>
+              </Box>
             </Box>
-          </Typography>
-          <Box pt={3} pb={10}>
-            <Typography variant="body1">{t('firstBulletPoint')}</Typography>
-            <Typography variant="body1">{t('secondBulletPoint')}</Typography>
-            <Typography variant="body1">{t('thirdBulletPoint')}</Typography>
           </Box>
         </Box>
       </Grid>
-      <Grid item md={12}>
-        <Box bgcolor="primary.main" paddingY={8} paddingX={smDown ? 3 : 0}>
-          <Box pl={smDown ? 0 : 6}>
-            <Typography color="common.white" variant="h6">
-              {t('enterInformationRequestDigitalCertificate')}
-            </Typography>
-          </Box>
+      <Grid item xs={12} md={5} className={classes.gridHeight}>
+        <Box
+          bgcolor={theme.palette.grey[300]}
+          paddingX={smDown ? 2 : 0}
+          height="100%"
+        >
+          <Grid container justifyContent="center">
+            <Grid item xs={12} md={10}>
+              <Box pt={7}>
+                <Typography variant="h6" fontWeight="bold">
+                  {t('enterInformationRequestDigitalCertificate')}
+                </Typography>
+              </Box>
+            </Grid>
+          </Grid>
           <Formik
             enableReinitialize
             initialValues={defaultValues}
@@ -137,85 +225,70 @@ const Home = () => {
           >
             {({ errors, touched, values }) => (
               <Form>
-                <Grid container justifyContent="space-between">
-                  <Grid item xs={12} md={5}>
-                    <Box pl={smDown ? 0 : 6}>
-                      <Box pt={10}>
-                        <Typography color="common.white" variant="subtitle1">
-                          {t('idNumber')}
-                        </Typography>
-                      </Box>
-                      <Field
-                        id="idNumber"
-                        name="idNumber"
-                        error={!!(touched.idNumber && errors.idNumber)}
-                        helperText={
-                          touched.idNumber && t(errors.idNumber || '')
-                        }
-                        as={BaseTextField}
-                      />
+                <Grid container justifyContent="center">
+                  <Grid item xs={12} md={10}>
+                    <Box pt={3}>
+                      <Typography variant="subtitle1">
+                        {t('idNumber')}
+                      </Typography>
                     </Box>
+                    <Field
+                      id="idNumber"
+                      name="idNumber"
+                      error={!!(touched.idNumber && errors.idNumber)}
+                      helperText={touched.idNumber && t(errors.idNumber || '')}
+                      as={BaseTextField}
+                    />
                   </Grid>
-                  <Grid item xs={12} md={5}>
-                    <Box pr={smDown ? 0 : 6} pl={mdDown && smUp ? 6 : 0}>
-                      <Box pt={10}>
-                        <Typography color="common.white" variant="subtitle1">
-                          {t('email')}
-                        </Typography>
-                      </Box>
-                      <Field
-                        id="email"
-                        name="email"
-                        error={!!(touched.email && errors.email)}
-                        helperText={touched.email && t(errors.email || '')}
-                        as={BaseTextField}
-                      />
+                  <Grid item xs={12} md={10}>
+                    <Box pt={3}>
+                      <Typography variant="subtitle1">{t('email')}</Typography>
                     </Box>
+                    <Field
+                      id="email"
+                      name="email"
+                      error={!!(touched.email && errors.email)}
+                      helperText={touched.email && t(errors.email || '')}
+                      as={BaseTextField}
+                    />
                   </Grid>
-                  <Grid item xs={12} md={5}>
-                    <Box pl={smDown ? 0 : 6}>
-                      <Box pt={10}>
-                        <Typography color="common.white" variant="subtitle1">
-                          {t('retypeEmailAddress')}
-                        </Typography>
-                      </Box>
-                      <Field
-                        id="retypeEmailAddress"
-                        name="retypeEmailAddress"
-                        error={
-                          !!touched.retypeEmailAddress &&
-                          isEmailMatch({
-                            email: values.email,
-                            check: values.retypeEmailAddress,
-                            errors
-                          })
-                        }
-                        helperText={
-                          touched.retypeEmailAddress &&
-                          t(
-                            errors.retypeEmailAddress ||
-                              getErrorMessage({
-                                email: values.email,
-                                check: values.retypeEmailAddress,
-                                errors
-                              })
-                          )
-                        }
-                        as={BaseTextField}
-                      />
+                  <Grid item xs={12} md={10}>
+                    <Box pt={3}>
+                      <Typography variant="subtitle1">
+                        {t('retypeEmailAddress')}
+                      </Typography>
                     </Box>
+                    <Field
+                      id="retypeEmailAddress"
+                      name="retypeEmailAddress"
+                      error={
+                        !!touched.retypeEmailAddress &&
+                        isEmailMatch({
+                          email: values.email,
+                          check: values.retypeEmailAddress,
+                          errors
+                        })
+                      }
+                      helperText={
+                        touched.retypeEmailAddress &&
+                        t(
+                          errors.retypeEmailAddress ||
+                            getErrorMessage({
+                              email: values.email,
+                              check: values.retypeEmailAddress,
+                              errors
+                            })
+                        )
+                      }
+                      as={BaseTextField}
+                    />
                   </Grid>
                   <Grid item xs={12} md={12}>
-                    <Box
-                      pt={10}
-                      paddingX={smDown ? 15 : 68}
-                      display="grid"
-                      textAlign="center"
-                    >
+                    <Box pt={8} pb={2} textAlign="center">
                       <BaseButton
                         variant="contained"
                         type="submit"
-                        color="secondary"
+                        color="primary"
                         // disabled={loading}
                       >
                         <Link underline="none" color="common.white">

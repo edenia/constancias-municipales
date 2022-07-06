@@ -13,20 +13,6 @@ const Thanks = () => {
 
   return (
     <Box position="relative">
-      <Box zIndex={0} position="absolute" width="100%">
-        <img
-          width="100%"
-          height={
-            typeof window !== 'undefined'
-              ? smDown
-                ? window.innerHeight
-                : window.innerHeight - 120
-              : 0
-          }
-          src="images/thanks-bg-image.png"
-          alt="Header"
-        />
-      </Box>
       <Box
         display="flex"
         alignItems="center"
@@ -38,16 +24,19 @@ const Thanks = () => {
           <Box margin="auto" textAlign="center">
             <Grid container justifyContent="center">
               <Grid item md={10}>
-                <img
-                  width={smDown ? '50%' : '30%'}
-                  src="icons/check-icon.png"
-                />
-                <Box pt={4}>
-                  <Typography variant="h5">
+                <Box pt={8} pb={3} paddingX={35}>
+                  <Typography variant="h4" fontWeight="bold">
                     {t('thanksMessageTitle')}
                   </Typography>
                 </Box>
-                <Box pt={3}>
+                <Box
+                  bgcolor="secondary.main"
+                  margin="auto"
+                  width="30%"
+                  height="5px"
+                  borderRadius={4}
+                />
+                <Box pt={4}>
                   <Typography variant="body1">
                     {t('thanksMessageDesc')}
                   </Typography>
@@ -59,7 +48,7 @@ const Thanks = () => {
               <Grid md={3}>
                 <Box pt={5}>
                   <Link underline="none" href="/">
-                    <BaseButton variant="outlined" color="secondary">
+                    <BaseButton variant="contained" color="primary">
                       {t('requestAnotherProof')}
                     </BaseButton>
                   </Link>
@@ -68,7 +57,7 @@ const Thanks = () => {
               <Grid md={3}>
                 <Box pt={5}>
                   <Link underline="none" href={mainConfig.urlOrganization}>
-                    <BaseButton variant="contained" color="primary">
+                    <BaseButton variant="outlined" color="secondary">
                       {t('returnSite')}
                     </BaseButton>
                   </Link>

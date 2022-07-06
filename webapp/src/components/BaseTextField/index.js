@@ -8,7 +8,6 @@ const BaseTextField = ({ ...props }) => {
 
   return (
     <TextField
-      variant="filled"
       margin="dense"
       fullWidth
       className={classes.textField}
@@ -24,7 +23,17 @@ BaseTextField.propTypes = {
 
 const useStyles = makeStyles(theme => ({
   textField: {
-    backgroundColor: theme.palette.primary.light
+    backgroundColor: theme.palette.common.white,
+    borderRadius: 4,
+    '& .MuiInputBase-input': {
+      paddingTop: theme.spacing(1),
+      paddingBottom: theme.spacing(1),
+      backgroundColor: theme.palette.common.white,
+      borderRadius: 4
+    },
+    '& .MuiFormHelperText-root': {
+      marginTop: theme.spacing(0)
+    }
   }
 }))
 

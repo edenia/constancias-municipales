@@ -19,14 +19,11 @@ export default theme => ({
     flexGrow: 1
   },
   desktopSection: {
-    display: 'none',
     height: 54,
     alignItems: 'center',
     justifyContent: 'space-between',
-    margin: '0 auto 7px auto',
-    [theme.breakpoints.up('md')]: {
-      display: 'flex'
-    }
+    margin: 'auto',
+    display: 'flex'
   },
   mobileSection: {
     display: 'flex',
@@ -36,5 +33,8 @@ export default theme => ({
   },
   colorIcon: {
     color: `${theme.palette.common.white} !important`
+  },
+  showCursos: {
+    cursor: 'pointer'
   }
 })

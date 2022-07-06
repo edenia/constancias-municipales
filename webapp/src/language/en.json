@@ -27,9 +27,9 @@
     "municipalRecordsManager": "Certificate system for properties",
     "subtitle": "Request your up-to-date property tax statement from your computer or mobile device.",
     "infoTitle": "The system of up-to-date digital tax records of the Municipality of Orotina offers:",
-    "firstBulletPoint": "• 100% free service.",
-    "secondBulletPoint": "• Completely online process.",
-    "thirdBulletPoint": "• Validity in other institutions.",
+    "firstBulletPoint": "100% free service.",
+    "secondBulletPoint": "Completely online process.",
+    "thirdBulletPoint": "Validity in other institutions.",
     "enterInformationRequestDigitalCertificate": "Enter the data to request your digital certificate:",
     "idType": "ID Type",
     "email": "Email",
@@ -53,7 +53,7 @@
     "welcomeMessage": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac viverra nunc, vitae rhoncus metus. Donec placerat ipsum nec ligula lacinia ornare. Cras et felis sit amet libero fermentum faucibus ut id justo. Maecenas vel nibh sed nibh faucibus rutrum. Pellentesque vel nibh molestie, eleifend magna in, eleifend nibh. Praesent elementum libero non ligula viverra feugiat. Morbi blandit massa nec posuere pellentesque. Quisque ac imperdiet tellus. Donec sed lorem sit amet nisl posuere dignissim at a sapien. In tristique et sapien et hendrerit. Nam aliquet quis turpis eu porttitor. Aenean odio augue, lacinia id ipsum at, dignissim sagittis libero. Pellentesque ex justo, tempus et rhoncus vitae, mattis vel justo. Suspendisse pellentesque nisi porttitor est posuere consectetur. Proin ornare orci eleifend, vestibulum massa et, bibendum nulla. Integer rutrum id quam et rhoncus. Nullam pretium pharetra magna in mattis. Nulla et sapien sit amet nibh dictum consectetur a quis dui. Morbi ac vestibulum eros. Ut commodo, dolor in sollicitudin euismod, libero lacus bibendum justo, non lobortis magna tellus vehicula turpis. Maecenas dignissim eget tellus eu molestie. Morbi pellentesque viverra ornare. Vivamus id feugiat nisi. Proin lobortis rhoncus finibus. Proin eu tellus dolor. Suspendisse ac tincidunt neque. In tincidunt ullamcorper lorem. Nulla facilisi."
   },
   "thanksRoute": {
-    "thanksMessageTitle": "Thank you for using the digital records system of the Municipality of Orotina.",
+    "thanksMessageTitle": "Thank you for using our system. municipal digital records",
     "thanksMessageDesc": "Your request was processed successfully. The certificate will be sent to your email in less than 24 hours.",
     "thanksMessageDesc2": "If you do not receive the document, contact the Municipality.",
     "requestAnotherProof": "Request Another Proof",
