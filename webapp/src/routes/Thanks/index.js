@@ -9,22 +9,23 @@ import { mainConfig } from '../../config'
 const Thanks = () => {
   const theme = useTheme()
   const { t } = useTranslation('thanksRoute')
+  const mdUp = useMediaQuery(theme.breakpoints.up('md'))
   const smDown = useMediaQuery(theme.breakpoints.down('sm'))
 
   return (
-    <Box position="relative">
+    <Box position="relative" height="100%">
       <Box
         display="flex"
         alignItems="center"
         position="relative"
         zIndex={2}
-        px={smDown ? 2 : 0}
+        px={mdUp ? 0 : 2}
       >
         <Box height="100%" width="100%" display="flex">
           <Box margin="auto" textAlign="center">
             <Grid container justifyContent="center">
               <Grid item md={10}>
-                <Box pt={8} pb={3} paddingX={35}>
+                <Box pt={8} pb={smDown ? 2 : 3} paddingX={mdUp ? 35 : 0}>
                   <Typography variant="h4" fontWeight="bold">
                     {t('thanksMessageTitle')}
                   </Typography>
@@ -32,17 +33,19 @@ const Thanks = () => {
                 <Box
                   bgcolor="secondary.main"
                   margin="auto"
-                  width="30%"
-                  height="5px"
+                  width={!mdUp ? '60%' : '30%'}
+                  height="6px"
                   borderRadius={4}
                 />
-                <Box pt={4}>
+                <Box pt={4} textAlign={smDown ? 'left' : 'center'}>
                   <Typography variant="body1">
                     {t('thanksMessageDesc')}
                   </Typography>
-                  <Typography variant="body1">
-                    {t('thanksMessageDesc2')}
-                  </Typography>
+                  <Box pt={2}>
+                    <Typography variant="body1">
+                      {t('thanksMessageDesc2')}
+                    </Typography>
+                  </Box>
                 </Box>
               </Grid>
               <Grid md={3}>
@@ -55,7 +58,7 @@ const Thanks = () => {
                 </Box>
               </Grid>
               <Grid md={3}>
-                <Box pt={5}>
+                <Box pt={smDown ? 2 : 5}>
                   <Link underline="none" href={mainConfig.urlOrganization}>
                     <BaseButton variant="outlined" color="secondary">
                       {t('returnSite')}
@@ -67,6 +70,16 @@ const Thanks = () => {
           </Box>
         </Box>
       </Box>
+      {!smDown && (
+        <Box position="absolute" width="100%" bottom={0}>
+          <Box justifyContent="end" display="flex">
+            <img
+              src="images/bg-constancias-thanks.png"
+              alt="background image"
+            />
+          </Box>
+        </Box>
+      )}
     </Box>
   )
 }

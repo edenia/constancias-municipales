@@ -1,6 +1,6 @@
 export default theme => ({
   gridHeight: {
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('md')]: {
       height: '100%'
     }
   },

@@ -14,7 +14,7 @@ const Footer = () => {
   const classes = useStyles()
 
   return (
-    <Box className={classes.root}>
+    <Box className={classes.root} zIndex={2}>
       <Grid container>
         <Grid item xs={12}>
           <Typography align="center" variant="body1">
@@ -23,6 +23,7 @@ const Footer = () => {
               underline="hover"
               color="secondary"
               href="https://edenia.com/es"
+              fontWeight="bold"
             >
               {' '}
               Edenia

@@ -8,10 +8,10 @@ import {
   CircularProgress
 } from '@mui/material'
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3'
+import { makeStyles, useTheme } from '@mui/styles'
 import { useTranslation } from 'react-i18next'
 import { Formik, Form, Field } from 'formik'
 import { useMutation } from '@apollo/client'
-import { makeStyles, useTheme } from '@mui/styles'
 
 import { useSharedState } from '../../context/state.context'
 import { BaseTextField, BaseButton } from '../../components'
@@ -30,11 +30,10 @@ const Home = () => {
   const { t } = useTranslation('homeRoute')
   const [, { showMessage }] = useSharedState()
   const { executeRecaptcha } = useGoogleReCaptcha()
+  const mdUp = useMediaQuery(theme.breakpoints.up('md'))
   const smDown = useMediaQuery(theme.breakpoints.down('sm'))
-  // const smUp = useMediaQuery(theme.breakpoints.up('sm'))
-  // const mdDown = useMediaQuery(theme.breakpoints.down('md'))
+  const mdDown = useMediaQuery(theme.breakpoints.down('md'))
   const [showProgressBar, setShowProgressBar] = useState(false)
-
   const [generateConstancy, { error: errorGenerateConstancy }] = useMutation(
     MUTATION_GENERATE_CONSTANCY
   )
@@ -64,15 +63,18 @@ const Home = () => {
     <Grid container className={classes.gridHeight}>
       <Grid item xs={12} md={7} className={classes.gridHeight}>
         <Box
-          borderRight={smDown ? 0 : `3px solid ${theme.palette.secondary.main}`}
+          borderRight={mdDown ? 0 : `3px solid ${theme.palette.secondary.main}`}
           borderBottom={
-            smDown ? `3px solid ${theme.palette.secondary.main}` : 0
+            mdDown ? `3px solid ${theme.palette.secondary.main}` : 0
           }
           bgcolor="common.white"
           height="100%"
+          position="relative"
+          pb={mdDown ? 4 : 0}
         >
           <Box
-            paddingY={smDown ? 3 : 4}
+            pt={3}
+            pb={2}
             paddingX={smDown ? 2 : 3}
             className={classes.boxHeaderStyle}
             bgcolor={theme.extraColors.secondaryVariantOpacity}
@@ -86,11 +88,7 @@ const Home = () => {
               {t('municipalRecordsManager')}
             </Typography>
           </Box>
-          <Box
-            paddingX={smDown ? 2 : 3}
-            pt={smDown ? 3 : 5}
-            pb={smDown ? 8 : 10}
-          >
+          <Box paddingX={smDown ? 2 : 3} pt={2}>
             <Typography
               variant="h6"
               align={smDown ? 'center' : 'left'}
@@ -99,7 +97,7 @@ const Home = () => {
               <Box fontWeight="bold">{t('subtitle')}</Box>
             </Typography>
             <Box
-              pt={3}
+              pt={2}
               display={smDown ? 'block' : 'flex'}
               justifyContent="space-around"
             >
@@ -108,7 +106,7 @@ const Home = () => {
                 border={`2px solid ${theme.palette.secondary.main}`}
                 bgcolor="common.white"
                 boxShadow={`0 3px 6px 0 ${theme.extraColors.shadowColor}`}
-                paddingY={4}
+                paddingY={3}
                 width="220px"
                 alignItems="center"
                 display="flex"
@@ -123,7 +121,7 @@ const Home = () => {
                 borderRadius={2}
                 border={`2px solid ${theme.palette.secondary.main}`}
                 bgcolor="common.white"
-                paddingY={4}
+                paddingY={3}
                 paddingX={2}
                 boxShadow={`0 3px 6px 0 ${theme.extraColors.shadowColor}`}
                 width="220px"
@@ -131,7 +129,7 @@ const Home = () => {
                 display="flex"
                 justifyContent="center"
                 margin={smDown ? 'auto' : 'none'}
-                mt={smDown ? 5 : 0}
+                mt={smDown ? 2 : 0}
               >
                 <Typography align="center" variant="body1">
                   {t('secondBulletPoint')}
@@ -141,14 +139,14 @@ const Home = () => {
                 borderRadius={2}
                 border={`2px solid ${theme.palette.secondary.main}`}
                 bgcolor="common.white"
-                paddingY={4}
+                paddingY={3}
                 width="220px"
                 boxShadow={`0 3px 6px 0 ${theme.extraColors.shadowColor}`}
                 alignItems="center"
                 display="flex"
                 justifyContent="center"
                 margin={smDown ? 'auto' : 'none'}
-                mt={smDown ? 5 : 0}
+                mt={smDown ? 2 : 0}
               >
                 <Typography align="center" variant="body1">
                   {t('thirdBulletPoint')}
@@ -156,6 +154,13 @@ const Home = () => {
               </Box>
             </Box>
           </Box>
+          {mdUp && (
+            <Box position="absolute" width="100%" bottom={0}>
+              <Box justifyContent="end" display="flex">
+                <img src="images/bg-constancias.png" alt="background image" />
+              </Box>
+            </Box>
+          )}
         </Box>
       </Grid>
       <Grid item xs={12} md={5} className={classes.gridHeight}>
@@ -289,7 +294,6 @@ const Home = () => {
                         variant="contained"
                         type="submit"
                         color="primary"
-                        // disabled={loading}
                       >
                         <Link underline="none" color="common.white">
                           {t('submit')}
