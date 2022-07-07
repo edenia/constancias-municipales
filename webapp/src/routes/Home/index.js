@@ -298,7 +298,7 @@ const Home = () => {
                         <Link underline="none" color="common.white">
                           {t('submit')}
                         </Link>
-                        {!showProgressBar && (
+                        {showProgressBar && (
                           <Box pl={2} display="flex">
                             <CircularProgress color="secondary" size={25} />
                           </Box>
