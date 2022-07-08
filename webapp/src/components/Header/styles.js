@@ -35,6 +35,7 @@ export default theme => ({
     color: `${theme.palette.common.white} !important`
   },
   showCursos: {
-    cursor: 'pointer'
+    cursor: 'pointer',
+    width: 150
   }
 })
