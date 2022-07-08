@@ -166,7 +166,7 @@ const Home = () => {
       <Grid item xs={12} md={5} className={classes.gridHeight}>
         <Box
           bgcolor={theme.palette.grey[300]}
-          paddingX={smDown ? 2 : 0}
+          paddingX={mdDown ? (smDown ? 2 : 4) : 0}
           height="100%"
         >
           <Grid container justifyContent="center">
