@@ -18,7 +18,6 @@ const Thanks = () => {
         display="flex"
         alignItems="center"
         position="relative"
-        zIndex={2}
         px={mdUp ? 0 : 2}
       >
         <Box height="100%" width="100%" display="flex">
