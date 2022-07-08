@@ -73,8 +73,8 @@ const Home = () => {
           pb={mdDown ? 4 : 0}
         >
           <Box
-            pt={3}
-            pb={2}
+            pt={5}
+            pb={4}
             paddingX={smDown ? 2 : 3}
             className={classes.boxHeaderStyle}
             bgcolor={theme.extraColors.secondaryVariantOpacity}

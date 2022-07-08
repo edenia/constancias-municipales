@@ -54,12 +54,7 @@ const generateConfirmation = ({
                     </p>
                     <img width="30%" src="https://raw.githubusercontent.com/edenia/constancias-municipales/main/webapp/public/icons/line-icon.png" />
                     <p align="left" style="margin: 24px 16px 8px; font-family: Arial; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.5; letter-spacing: 0.44px; text-align: left; color: #000;">
-                      Adjunto encontrará la constancia digital de impuestos al día para propiedades solicitada desde la 
-                      plataforma en línea de la Municipalidad de Orotina. Este documento ha sido firmado digitalmente con la 
-                      firma digital del Banco Central de Costa Rica, la cual tiene validez en otras instituciones del país. 
-                    </p>
-                    <p align="left" style="margin: 0px 16px 8px; font-family: Arial; font-size: 16px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.5; letter-spacing: 0.44px; text-align: left; color: #000;">
-                      Adjunto encontrará la constancia digital de impuestos al día para propiedades solicitada desde la 
+                      Adjunto encontrará la constancia digital de impuestos al día solicitada desde la 
                       plataforma en línea de la Municipalidad de Orotina. Este documento ha sido firmado digitalmente con la 
                       firma digital del Banco Central de Costa Rica, la cual tiene validez en otras instituciones del país. 
                     </p>

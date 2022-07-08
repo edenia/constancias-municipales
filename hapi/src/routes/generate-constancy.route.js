@@ -57,7 +57,7 @@ module.exports = {
         mailUtil.send({
           idUser: input.idNumber,
           to: input.email,
-          subject: 'Certificado Municipal de propiedades',
+          subject: 'Certificación de impuestos municipales',
           template: mailTemplate.generateConfirmation,
           constancia: signedDoc.documento
         })
@@ -100,7 +100,7 @@ module.exports = {
       mailUtil.send({
         idUser: input.idNumber,
         to: input.email,
-        subject: 'Certificado Municipal de propiedades',
+        subject: 'Certificación de impuestos municipales',
         template: mailTemplate.generateConfirmation,
         constancia: signedDoc.documento
       })

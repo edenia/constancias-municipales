@@ -4,7 +4,7 @@
 
 ## Sobre el Proyecto
 
-_El generador de constancias municipales es una aplicación web que permite a los contribuyentes de las municipalidades obtener un documento digital en el que podrá ver los pagos de los impuestos municipales de las propiedades a su nombre. Este documento es firmado digitalmente por la institución que emite dicho documento, por lo que es oficial y válido para utilizar en distintas instituciones de Costa Rica._
+_El generador de constancias municipales es una aplicación web que permite a los contribuyentes de las municipalidades obtener un documento digital en el que podrá ver los pagos de los impuestos municipales a su nombre o el de su organización. Este documento es firmado digitalmente por la institución que emite dicho documento, por lo que es oficial y válido para utilizar en distintas instituciones de Costa Rica._
 
 _Este proyecto es una iniciativa de [Edenia](https://edenia.com/es), una empresa que desarrolla soluciones web3 haciendo uso de tecnologías blockchain y otras de la industria 4.0. El proyecto cuenta con el apoyo y financiamiento de [The Trust For The Americas](https://www.trustfortheamericas.org/), una iniciativa de la [Organization of American States](https://www.oas.org/en/)._
 
@@ -27,7 +27,7 @@ _Este proyecto es una iniciativa de [Edenia](https://edenia.com/es), una empresa
 
 _El objetivo de este proyecto es permitir a instituciones costarricenses, como municipalidades, acceder a una herramienta para emitir de forma rápida y segura constancias y otros documentos firmados digitalmente con la firma autorizada por el Banco Central de Costa Rica. Este esfuerzo ha sido realizado de forma open-source (código abierto) para que cualquier entidad pueda acceder al proceso._
 
-_El proyecto inició como iniciativa de la Municipalidad de Orotina para permitir a sus personas usuarias solicitar y recibir constancias digitales de impuestos de propiedades con la firma digital autorizada por el gobierno._
+_El proyecto inició como iniciativa de la Municipalidad de Orotina para permitir a sus personas usuarias solicitar y recibir constancias digitales de impuestos con la firma digital autorizada por el gobierno._
 
 ## Versión
 

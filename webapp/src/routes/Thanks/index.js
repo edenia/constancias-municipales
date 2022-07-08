@@ -70,7 +70,7 @@ const Thanks = () => {
         </Box>
       </Box>
       {!smDown && (
-        <Box position="absolute" width="100%" bottom={0}>
+        <Box position="absolute" width="100%" bottom={0} zIndex={-1}>
           <Box justifyContent="end" display="flex">
             <img
               src="images/bg-constancias-thanks.png"
