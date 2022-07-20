@@ -45,7 +45,7 @@
     "requestBeenSentSuccessfully": "Su solicitud ha sido enviada con éxito.",
     "errorReCaptcha": "Consulta inválida por ReCaptcha",
     "errorOccurredTryAgain": "Ocurrió un error inténtelo nuevamente",
-    "InvalidDataMessage": "Datos inválidos. Por favor revise nuevamente. Si el problema persiste, comuníquese con la Municipalidad.",
+    "InvalidDataMessage": "No se encuentra registrado ante esta organizacion. Revise sus datos e intente de nuevo. Si el problema persiste, comuníquese con nosotros.",
     "haveExceededDailyRequestLimit": "Ha superado el límite de solicitudes diario del mismo documento. Espere 24 horas e intente de nuevo.",
     "submit": "Solicitar",
     "errorOccurredPlease": "Ocurrió un error. Por favor intente otra vez",

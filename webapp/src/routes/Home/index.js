@@ -53,10 +53,18 @@ const Home = () => {
 
   useEffect(async () => {
     if (!errorGenerateConstancy) return
-    showMessage({
-      type: 'error',
-      content: t('errorOccurredTryAgain')
-    })
+
+    errorGenerateConstancy?.message === 'Request failed with status code 404'
+      ? showMessage({
+          type: 'error',
+          content: t('InvalidDataMessage')
+        })
+      : showMessage({
+          type: 'error',
+          content: t('errorOccurredTryAgain')
+        })
+
+    setShowProgressBar(false)
   }, [errorGenerateConstancy])
 
   return (
