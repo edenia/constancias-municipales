@@ -153,7 +153,7 @@ Se crea a partir de la rama main, nuestra rama de producción, en caso de querer
 
 ## Licencia
 
-MIT © EOS Costa Rica
+MIT © Sistemas Edenia Internacional S.A.
 
 ## Contribuyendo
 
