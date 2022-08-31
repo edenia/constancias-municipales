@@ -1,6 +1,8 @@
 # Generador de constancias de pagos de impuestos municipales
 
-![Constancias de Pago de Impuestos Municipales](https://raw.githubusercontent.com/edenia/constancias-municipales/main/webapp/public/images/constancias-home.png)
+[![Constancias de Pago de Impuestos Municipales](https://raw.githubusercontent.com/edenia/constancias-municipales/main/webapp/public/images/constancias-home.png)](https://www.youtube.com/embed/HhjrIHJRA4I)
+
+**Ver Video: [Proyecto Constancias Digitales Municipalidad de Orotina](https://www.youtube.com/embed/HhjrIHJRA4I)**
 
 ## Sobre el Proyecto
 
@@ -169,40 +171,13 @@ Por favor lea EOS Costa Rica [Pautas de contribución de código abierto](https:
 
 Si encuentra un error, informe los errores grandes y pequeños [**abriendo un issue**](https://github.com/edenia/constancias-municipales/projects/1)
 
-## Colaboradores
-
-Thanks goes to these wonderful people ([emoji key](https://github.com/kentcdodds/all-contributors#emoji-key)):
-
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore-start -->
-<!-- markdownlint-disable -->
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/AngeloCG97"><img src="https://avatars.githubusercontent.com/u/51149817?v=4"
-    width="100px;" alt=""/><br /><sub><b>Angelo Castro</b></sub></a><br /><a href="#ideas-angelocastro" title="Code">💻</a> <a href="https://github.com/edenia/constancias-municipales/pulls" title="Reviewed Pull Requests">👀</a><a href="https://github.com/edenia/constancias-municipales" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://github.com/edenia/constancias-municipales"><img src="https://avatars2.githubusercontent.com/u/40245170?v=4" width="100px;" alt="Edgar Fernandez"/><br /><sub><b>Edgar Fernandez</b></sub></a><br /><a href="#ideas-edgar-eoscostarica" title="Ideas, Planning, & Feedback">🤔</a><a href="https://github.com/edenia/constancias-municipales" title="Documentation">📖</a> <a href="#talk-edgar-eoscostarica" title="Talks">📢</a></td>
-    <td align="center"><a href="https://github.com/Johannayee">
-   <img src="https://avatars.githubusercontent.com/u/85965202?v=4" width="100px;" alt="Luis Diego Rojas"/><br /><sub><b>Johanna Yee</b></sub></a><br /><a href="https://github.com/edenia/constancias-municipales/projects/1" title="Ideas, Planning, & Feedback">🤔</a><a href="#design-johannayee" title="Design">🎨</a></td>
-   <td align="center"><a href="https://github.com/ldrojas">
-   <img src="https://avatars0.githubusercontent.com/u/29232417?s=460&v=4" width="100px;" alt="Luis Diego Rojas"/><br /><sub><b>Luis Diego Rojas</b></sub></a><br /><a href="https://github.com/edenia/constancias-municipales" title="Ideas, Planning, & Feedback">🤔</a><a href="https://github.com/edenia/constancias-municipales/projects/1" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://github.com/edenia/constancias-municipales"><img src="https://avatars0.githubusercontent.com/u/5632966?v=4" width="100px;" alt=""/><br /><sub><b>Xavier Fernandez</b></sub></a><br /><a href="#infra-xavier506" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="https://github.com/edenia/constancias-municipales" title="Documentation">📖</a> <a href="#projectManagement-xavier506" title="Project Management">📆</a></td>
-  </tr>
-</table>
-
-<!-- markdownlint-enable -->
-<!-- prettier-ignore-end -->
-<!-- ALL-CONTRIBUTORS-LIST:END -->
-
 
 ## Sobre Edenia
 
-<div style={{ display: "block", textAlign: "center" }}>
-    <img style={{ width: "50%" }} src="https://edenia.com/es/logos/edenia-general-logo.png" />
-</div>
+<span align="center">
+   <a href="https://edenia.com"><img width="400" alt="image" src="https://raw.githubusercontent.com/edenia/.github/master/.github/workflows/images/edenia-logo.png"></img></a>
+</span>
+
 
 Edenia es una empresa que corre infraestructura blockchain independiente y desarrolla soluciones web3. Nuestro equipo de desarrolladores agnósticos a la tecnología ha estado operando desde 1987, impulsando las nuevas tecnologías para hacer la internet más segura, eficiente y transparente.
 
