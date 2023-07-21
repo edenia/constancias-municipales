@@ -81,8 +81,8 @@ const Home = () => {
           pb={mdDown ? 4 : 0}
         >
           <Box
-            pt={5}
-            pb={4}
+            pt={4}
+            pb={3}
             paddingX={smDown ? 2 : 3}
             className={classes.boxHeaderStyle}
             bgcolor={theme.extraColors.secondaryVariantOpacity}
@@ -179,7 +179,7 @@ const Home = () => {
         >
           <Grid container justifyContent="center">
             <Grid item xs={12} md={10}>
-              <Box pt={7}>
+              <Box pt={6}>
                 <Typography variant="h6" fontWeight="bold">
                   {t('enterInformationRequestDigitalCertificate')}
                 </Typography>
@@ -297,7 +297,7 @@ const Home = () => {
                     />
                   </Grid>
                   <Grid item xs={12} md={12}>
-                    <Box pt={8} pb={2} textAlign="center">
+                    <Box pt={6} textAlign="center">
                       <BaseButton
                         variant="contained"
                         type="submit"
