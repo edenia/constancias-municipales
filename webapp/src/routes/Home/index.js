@@ -297,7 +297,7 @@ const Home = () => {
                     />
                   </Grid>
                   <Grid item xs={12} md={12}>
-                    <Box pt={6} textAlign="center">
+                    <Box pt={6} pb={2} textAlign="center">
                       <BaseButton
                         variant="contained"
                         type="submit"

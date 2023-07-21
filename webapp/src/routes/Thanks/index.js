@@ -24,7 +24,7 @@ const Thanks = () => {
           <Box margin="auto" textAlign="center">
             <Grid container justifyContent="center">
               <Grid item md={10}>
-                <Box pt={8} pb={smDown ? 2 : 3} paddingX={mdUp ? 35 : 0}>
+                <Box pt={6} pb={smDown ? 2 : 3} paddingX={mdUp ? 35 : 0}>
                   <Typography variant="h4" fontWeight="bold">
                     {t('thanksMessageTitle')}
                   </Typography>
