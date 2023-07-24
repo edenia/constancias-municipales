@@ -6,7 +6,8 @@
     "darkMode": "Modo Oscuro"
   },
   "footer": {
-    "copy": "Todos los Derechos Reservados. Elaborado por"
+    "copy": "Todos los Derechos Reservados. Elaborado por",
+    "thanks": "Gracias al apoyo de"
   },
   "routes": {
     "/>title": "Constancias Municipales",

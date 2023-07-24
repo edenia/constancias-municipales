@@ -17,10 +17,13 @@ const Footer = () => {
     <Box className={classes.root} zIndex={2}>
       <Grid container>
         <Grid item xs={12} justifyContent="center">
+          <Typography align="center" variant="body2">
+            {t('thanks')}:
+          </Typography>
           <Box width="100%" display="flex" justifyContent="center">
             <Link href="https://cr.usembassy.gov/es/">
               <img
-                width={150}
+                width={145}
                 src="logos/embajada-usa-logo.png"
                 alt="Embajada usa logo"
               />

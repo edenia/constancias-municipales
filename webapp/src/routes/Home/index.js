@@ -165,7 +165,11 @@ const Home = () => {
           {mdUp && (
             <Box position="absolute" width="100%" bottom={0}>
               <Box justifyContent="end" display="flex">
-                <img src="images/bg-constancias.png" alt="background image" />
+                <img
+                  width="60%"
+                  src="images/bg-constancias.png"
+                  alt="background image"
+                />
               </Box>
             </Box>
           )}
@@ -179,7 +183,7 @@ const Home = () => {
         >
           <Grid container justifyContent="center">
             <Grid item xs={12} md={10}>
-              <Box pt={6}>
+              <Box pt={5}>
                 <Typography variant="h6" fontWeight="bold">
                   {t('enterInformationRequestDigitalCertificate')}
                 </Typography>

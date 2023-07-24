@@ -6,7 +6,8 @@
     "darkMode": "Dark Mode"
   },
   "footer": {
-    "copy": "All rights reserved. Produced by"
+    "copy": "All rights reserved. Produced by",
+    "thanks": "Thanks to the support of"
   },
   "routes": {
     "/>title": "Constancias Municipales",

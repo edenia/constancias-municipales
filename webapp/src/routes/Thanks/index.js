@@ -73,6 +73,7 @@ const Thanks = () => {
         <Box position="absolute" width="100%" bottom={0} zIndex={-1}>
           <Box justifyContent="end" display="flex">
             <img
+              width="50%"
               src="images/bg-constancias-thanks.png"
               alt="background image"
             />
