@@ -1,6 +1,6 @@
 export default theme => ({
   root: {
-    padding: theme.spacing(1),
+    padding: theme.spacing(0, 1, 1, 1),
     position: 'relative'
   },
   listItem: {
